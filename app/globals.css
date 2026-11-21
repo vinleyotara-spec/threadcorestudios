@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/*
+ * BRAND TOKENS
+ * ------------
+ * Change the site's colours here. Everything uses these variables.
+ * A neutral base plus ONE accent colour. To rebrand, edit --brand-accent
+ * (and its -strong / -soft variants) and the neutrals below.
+ *
+ * Contrast note: --brand-accent is chosen to pass WCAG AA (4.5:1) for text on
+ * --canvas and for white text on top of it. Re-check if you change it.
+ */
+:root {
+  --brand-accent: #c23b1f;
+  --brand-accent-strong: #a42f16;
+  --brand-accent-soft: #f6e4de;
+
+  --canvas: #f7f5f1; /* page background */
+  --surface: #ffffff; /* cards, form fields */
+  --sunken: #efebe4; /* alternate sections */
+  --ink: #161513; /* headings, dark sections */
+  --body: #3d3a35; /* body text */
+  --muted: #6b665e; /* secondary text */
+  --line: #e0dbd1; /* borders, dividers */
+
+  --radius: 14px;
+}
+
+@theme inline {
+  --color-accent: var(--brand-accent);
+  --color-accent-strong: var(--brand-accent-strong);
+  --color-accent-soft: var(--brand-accent-soft);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-sunken: var(--sunken);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --radius-brand: var(--radius);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem; /* clear the sticky navbar for #anchors */
+}
+
+body {
+  background: var(--canvas);
+  color: var(--body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--brand-accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---- Motion (subtle, and off for people who ask for less) ---------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* On-load entrance, used in the hero. */
+  .enter {
+    animation: rise-in 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .enter-1 { animation-delay: 0.08s; }
+  .enter-2 { animation-delay: 0.18s; }
+  .enter-3 { animation-delay: 0.3s; }
+  .enter-4 { animation-delay: 0.42s; }
+
+  /* Scroll reveal in pure CSS (no JavaScript). Browsers without
+     scroll-driven animations simply show the content immediately. */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+}
+
+/* Smooth open/close for the services accordion without JavaScript layout code. */
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+.accordion-panel[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+.accordion-panel > div {
+  overflow: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  .accordion-panel {
+    transition: none;
+  }
+}

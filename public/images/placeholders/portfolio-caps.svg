@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-label="Placeholder illustration">
+<rect width="1000" height="1000" fill="#C23B1F"/>
+<circle cx="500" cy="500" r="390" fill="#B03319"/>
+<g stroke="#1B1A18" stroke-opacity=".28" stroke-width="2" fill="none"><circle cx="130" cy="150" r="11"/><path d="M108 150h44M130 128v44"/></g><g stroke="#1B1A18" stroke-opacity=".28" stroke-width="2" fill="none"><circle cx="870" cy="150" r="11"/><path d="M848 150h44M870 128v44"/></g><g stroke="#1B1A18" stroke-opacity=".28" stroke-width="2" fill="none"><circle cx="130" cy="850" r="11"/><path d="M108 850h44M130 828v44"/></g><g stroke="#1B1A18" stroke-opacity=".28" stroke-width="2" fill="none"><circle cx="870" cy="850" r="11"/><path d="M848 850h44M870 828v44"/></g>
+<ellipse cx="500" cy="852" rx="270" ry="20" fill="#000" opacity=".14"/>
+
+<path d="M240 592 C240 330 760 330 760 592 Z" fill="#FBFAF6" stroke="#EAE3D5" stroke-width="3"/>
+<path d="M500 346 L500 592 M392 366 Q344 470 340 592 M608 366 Q656 470 660 592" fill="none" stroke="#EAE3D5" stroke-width="3"/>
+<path d="M214 592 Q500 538 786 592 Q822 696 500 730 Q178 696 214 592 Z" fill="#EAE3D5" stroke="#1B1A18" stroke-opacity=".18" stroke-width="3"/>
+<circle cx="500" cy="352" r="15" fill="#1B1A18" opacity=".85"/>
+<circle cx="500" cy="476" r="58" fill="none" stroke="#1B1A18" stroke-width="5.8" stroke-linecap="round" stroke-dasharray="14 9"/><circle cx="500" cy="476" r="26.68" fill="none" stroke="#1B1A18" stroke-width="5.8" stroke-linecap="round" stroke-dasharray="14 9"/>
+</svg>
