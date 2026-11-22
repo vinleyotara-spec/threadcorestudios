@@ -2,7 +2,13 @@
  * FAQ shown on the homepage and published to search engines as FAQ structured
  * data. Keep answers factual: edit them to match how the business really works.
  */
+import { siteConfig } from "@/lib/config";
+
 export const faqs = [
+  {
+    q: "Where are you and when are you open?",
+    a: `We are at ${siteConfig.contact.address}. We are open ${siteConfig.contact.hours}, and closed on Sundays. You are welcome to visit, or message us on WhatsApp any time.`,
+  },
   {
     q: "How do I get a price?",
     a: "All pricing is by quotation, based on what you need: the product, quantity, design and finish. Send the details through the quote form or WhatsApp and we will come back with a quotation. No account is needed.",

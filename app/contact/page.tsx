@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/forms/ContactForm";
 import { ExternalButtonLink } from "@/components/shared/Button";
 import { Container } from "@/components/shared/Container";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { emailHref, phoneHref, siteConfig } from "@/lib/config";
+import { emailHref, mapsHref, phoneHref, siteConfig } from "@/lib/config";
 import { pageMetadata } from "@/lib/seo";
 import { whatsappMessages, whatsappUrl } from "@/lib/whatsapp";
 
@@ -16,10 +16,10 @@ export const metadata = pageMetadata({
 
 export default function ContactPage() {
   const { contact, social } = siteConfig;
-  const details = [
+  const details: Array<{ icon: typeof Phone; label: string; value: string; href?: string; external?: boolean }> = [
     { icon: Phone, label: "Telephone", value: contact.phone, href: phoneHref },
     { icon: Mail, label: "Email", value: contact.email, href: emailHref },
-    { icon: MapPin, label: "Studio", value: contact.address },
+    { icon: MapPin, label: "Studio", value: contact.address, href: mapsHref, external: true },
     ...(contact.hours ? [{ icon: Clock, label: "Hours", value: contact.hours }] : []),
   ];
 
@@ -51,7 +51,7 @@ export default function ContactPage() {
             </div>
 
             <ul className="divide-y divide-line border-y border-line">
-              {details.map(({ icon: Icon, label, value, href }) => (
+              {details.map(({ icon: Icon, label, value, href, external }) => (
                 <li key={label} className="flex items-start gap-4 py-5">
                   <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-sunken text-accent">
                     <Icon aria-hidden="true" className="size-5" />
@@ -59,8 +59,13 @@ export default function ContactPage() {
                   <div className="min-w-0">
                     <p className="text-sm text-muted">{label}</p>
                     {href ? (
-                      <a href={href} className="break-words text-lg font-medium text-ink hover:text-accent">
+                      <a
+                        href={href}
+                        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="break-words text-lg font-medium text-ink hover:text-accent"
+                      >
                         {value}
+                        {external && <span className="sr-only"> (opens in a new tab)</span>}
                       </a>
                     ) : (
                       <p className="text-lg font-medium text-ink">{value}</p>

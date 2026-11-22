@@ -9,11 +9,25 @@ import { whatsappMessages } from "@/lib/whatsapp";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "LocalBusiness",
   name: siteConfig.name,
   url: siteConfig.url,
   logo: `${siteConfig.url}/brand/threadcore-profile.png`,
+  image: `${siteConfig.url}/brand/threadcore-profile.png`,
   description: siteConfig.description,
+  telephone: siteConfig.contact.phone.replace(/\s/g, ""),
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: siteConfig.contact.addressParts.street,
+    addressLocality: siteConfig.contact.addressParts.locality,
+    addressCountry: siteConfig.contact.addressParts.country,
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: siteConfig.contact.openingHours.days,
+    opens: siteConfig.contact.openingHours.opens,
+    closes: siteConfig.contact.openingHours.closes,
+  },
 };
 
 const geist = Geist({

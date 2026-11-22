@@ -191,7 +191,8 @@ The architecture leaves room for these later phases (none are built yet):
 ## Outstanding before launch
 
 - [x] Phone and WhatsApp number set (+254 714 282 240) in `lib/config.ts`.
-- [ ] Replace the placeholder email, address and social links in `lib/config.ts`.
+- [x] Studio address and opening hours set (Greencourt Plaza, Latema Road, Mon to Sat 8 AM to 5 PM).
+- [ ] Replace the placeholder email and social links in `lib/config.ts`.
 - [ ] Run `supabase/schema.sql` and set the Supabase variables (forms don't save until you do).
 - [ ] Optional: set the Resend variables for email alerts.
 - [ ] Replace placeholder images and sample portfolio projects with real photography.

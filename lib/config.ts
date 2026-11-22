@@ -33,9 +33,21 @@ export const siteConfig = {
     /** PLACEHOLDER: replace with the real enquiries inbox. */
     email: "hello@threadcorestudios.com",
     /** PLACEHOLDER: replace with the real studio address. */
-    address: "Studio address, City, Country",
-    /** Optional. Leave empty to hide. */
-    hours: "",
+    address: "Greencourt Plaza, Latema Road, 4th Floor, Room FF14 (near Odeon), Nairobi, Kenya",
+    /** Shown on the contact page and footer. Leave empty to hide. */
+    hours: "Monday to Saturday, 8:00 AM to 5:00 PM",
+    /** Same hours in a machine-readable form (used for Google business information). */
+    openingHours: {
+      days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "08:00",
+      closes: "17:00",
+    },
+    /** Parts of the address for Google business information. */
+    addressParts: {
+      street: "Greencourt Plaza, Latema Road, 4th Floor, Room FF14",
+      locality: "Nairobi",
+      country: "KE",
+    },
   },
 
   /**
@@ -64,3 +76,7 @@ export type SiteConfig = typeof siteConfig;
 /** `tel:` link built from the configured phone number. */
 export const phoneHref = `tel:${siteConfig.contact.phone.replace(/[^\d+]/g, "")}`;
 export const emailHref = `mailto:${siteConfig.contact.email}`;
+/** Opens Google Maps (or the Maps app on phones) at the studio. */
+export const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  "Greencourt Plaza, Latema Road, Nairobi",
+)}`;

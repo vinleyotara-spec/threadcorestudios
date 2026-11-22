@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { cacheLife } from "next/cache";
-import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ArrowUpRight, Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { Logo } from "@/components/shared/Logo";
-import { emailHref, phoneHref, siteConfig } from "@/lib/config";
+import { emailHref, mapsHref, phoneHref, siteConfig } from "@/lib/config";
 import { getCategories } from "@/lib/services";
 import { whatsappMessages, whatsappUrl } from "@/lib/whatsapp";
 
@@ -110,10 +110,24 @@ export async function Footer() {
                 {contact.email}
               </a>
             </li>
-            <li className="flex items-start gap-3">
-              <MapPin aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
-              {contact.address}
+            <li>
+              <a
+                href={mapsHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 transition-colors hover:text-white"
+              >
+                <MapPin aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
+                {contact.address}
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
             </li>
+            {contact.hours && (
+              <li className="flex items-start gap-3">
+                <Clock aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
+                {contact.hours}
+              </li>
+            )}
           </ul>
         </div>
       </Container>
