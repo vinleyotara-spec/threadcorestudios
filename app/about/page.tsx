@@ -3,6 +3,7 @@ import { CTASection } from "@/components/shared/CTASection";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Check } from "lucide-react";
+import { siteConfig } from "@/lib/config";
 import { about, manufacturingProcess, workPrinciples } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
@@ -16,12 +17,17 @@ export const metadata = pageMetadata({
 export default function AboutPage() {
   return (
     <>
-      <PageHeader eyebrow="About us" title="A creative studio for *making your mark*" description={about.intro} />
+      <PageHeader eyebrow="About us" title="A creative studio for *making your mark*" description={about.intro}>
+        <p className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2 text-sm font-medium text-ink">
+          <span aria-hidden="true" className="size-2 rounded-full bg-orange" />
+          Operating in Nairobi since {siteConfig.established.label}
+        </p>
+      </PageHeader>
 
       <section className="py-16 sm:py-24">
         <Container className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div className="reveal">
-            <SectionHeading eyebrow="Our story" title="Where we are *starting*" />
+            <SectionHeading eyebrow="Our story" title="How we *began*" />
           </div>
           <div className="reveal space-y-6 text-lg leading-relaxed text-body">
             {about.story.map((p) => (

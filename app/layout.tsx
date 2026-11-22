@@ -15,6 +15,7 @@ const organizationJsonLd = {
   logo: `${siteConfig.url}/brand/threadcore-profile.png`,
   image: `${siteConfig.url}/brand/threadcore-profile.png`,
   description: siteConfig.description,
+  foundingDate: siteConfig.established.iso,
   telephone: siteConfig.contact.phone.replace(/\s/g, ""),
   address: {
     "@type": "PostalAddress",

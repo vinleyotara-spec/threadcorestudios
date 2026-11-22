@@ -20,6 +20,9 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://threadcorestudios.com",
   locale: "en",
 
+  /** When the business started operating. Shown on the About page and footer. */
+  established: { label: "August 2025", iso: "2025-08" },
+
   contact: {
     /**
      * WhatsApp number in international format, digits only (no "+", spaces or

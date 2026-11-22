@@ -6,6 +6,8 @@
  * company history, awards, clients or statistics. Edit it freely.
  */
 
+import { siteConfig } from "@/lib/config";
+
 export const hero = {
   eyebrow: "Printing · Embroidery · Uniforms · Branding",
   headline: ["Bring Your", "Ideas", "to Life."],
@@ -69,7 +71,7 @@ export const about = {
   intro:
     "Threadcore Studios is a creative printing, embroidery and branding studio. We help individuals and businesses turn ideas into printed and stitched products they are proud to put their name on.",
   story: [
-    "We are starting with printing and embroidery, and building towards a wider range of ways to bring a brand to life, including made-to-order uniforms and apparel, promotional merchandise, packaging and signage.",
+    `We have been operating since ${siteConfig.established.label}, starting with printing and embroidery, and we are building towards a wider range of ways to bring a brand to life, including made-to-order uniforms and apparel, promotional merchandise, packaging and signage.`,
     "Every project starts with a conversation about what you want to achieve. From there we recommend the right materials and methods, and keep you informed until your order is in your hands.",
   ],
   mission:
