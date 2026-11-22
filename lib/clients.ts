@@ -1,23 +1,30 @@
 /**
- * CLIENT LOGOS
- * ------------
- * Brands you have genuinely produced work for. While this list is empty the
- * "Trusted by" strip on the homepage is NOT rendered, so nothing is shown that
- * isn't real.
+ * CLIENTS
+ * -------
+ * Businesses you have genuinely worked for, shown as a "Clients we have worked
+ * with" strip on the homepage. The strip is hidden while this list is empty.
  *
- * Only add a brand when BOTH are true:
- *   1. You really did the work for them.
- *   2. You have their permission to show their name and logo (company logos are
- *      trademarks, and showing one implies an endorsement or relationship).
+ * Names are shown as plain text in one consistent style. That states a fact
+ * (you did work for them) without using anyone's logo.
  *
- * To add one: put the logo file in /public/images/clients/ and add an entry:
- *   { name: "Example Ltd", logo: "/images/clients/example.svg" }
- * Prefer a single-colour (or transparent PNG/SVG) logo so the strip looks tidy.
+ * To show a logo instead, add `logo` (a file in /public/images/clients/), but
+ * only with that client's permission: a company logo is a trademark and implies
+ * a relationship, and some brands restrict where theirs may appear.
+ * Example: { name: "Example Ltd", logo: "/images/clients/example.svg" }
+ *
+ * Remove any entry you are not comfortable naming.
  */
-export interface ClientLogo {
+export interface Client {
   name: string;
-  logo: string;
+  /** Optional logo. Leave out to show the name as text. */
+  logo?: string;
   href?: string;
 }
 
-export const clients: ClientLogo[] = [];
+export const clients: Client[] = [
+  { name: "Coca-Cola" },
+  { name: "Isuzu" },
+  { name: "Twende Trips" },
+  { name: "V&C Works Limited" },
+  { name: "Hadiid Fabricators" },
+];

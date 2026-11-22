@@ -122,9 +122,10 @@ logo applied to cards, labels, caps, polos, totes, signage and app icons. Share 
 Edit the FAQ in `lib/faq.ts` (it also feeds Google's FAQ rich results). The uniform size sheet is
 `public/downloads/threadcore-uniform-size-sheet.csv`; link more helpers per category through `resources` in `lib/services.ts`.
 
-### Client logos
-`lib/clients.ts` is empty on purpose: the "Brands we have worked with" strip only appears once you add brands
-you have genuinely worked for **and** have permission to show. Never add a brand's logo otherwise.
+### Clients
+`lib/clients.ts` lists the businesses you have worked for. They appear as plain text names in the "Clients we have worked with"
+strip on the homepage (the strip is hidden if the list is empty). Only add a logo with that client's permission: it is their
+trademark and implies a relationship. Remove any name you are not comfortable showing.
 
 ### Services
 Edit [lib/services.ts](lib/services.ts). Add an object to `services` and it appears on the Services
