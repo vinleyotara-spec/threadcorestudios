@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Threadcore Studios">
-  <g fill="none" stroke="#000000" stroke-width="9" stroke-linecap="round">
-    <path d="M10.5 34H66"/>
-    <path d="M70.5 34H78.5M92.5 34H96.5M110.5 34H110.5"/>
-  </g>
-  <path d="M49.5 16.5A10.5 10.5 0 0 1 70.5 16.5L70.5 66Q70.5 92 60 112Q49.5 92 49.5 66ZM56.4 24A3.6 3.6 0 0 1 63.6 24V44A3.6 3.6 0 0 1 56.4 44Z" fill="#000000" fill-rule="evenodd"/>
-</svg>

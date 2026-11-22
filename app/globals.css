@@ -4,29 +4,35 @@
  * BRAND TOKENS
  * ------------
  * Change the site's colours here. Everything uses these variables.
- * A neutral base plus ONE accent colour. To rebrand, edit --brand-accent
- * (and its -strong / -soft variants) and the neutrals below.
+ * The palette comes from the Threadcore logo: NAVY (--ink) and ORANGE.
  *
- * Contrast note: --brand-accent is chosen to pass WCAG AA (4.5:1) for text on
- * --canvas and for white text on top of it. Re-check if you change it.
+ * Orange comes in two strengths because a bright orange is too pale for small
+ * text on a light page:
+ *   --brand-orange  the logo orange. Buttons, icons, decoration, and on dark backgrounds.
+ *   --brand-accent  a deeper orange that passes WCAG AA (4.5:1) for small text on --canvas.
+ * Buttons use the bright orange with navy text (also AA). Re-check contrast if you change these.
  */
 :root {
-  --brand-accent: #c23b1f;
-  --brand-accent-strong: #a42f16;
-  --brand-accent-soft: #f6e4de;
+  --brand-orange: #fc7e18;
+  --brand-orange-hover: #ff9640;
+  --brand-accent: #b04f08;
+  --brand-accent-strong: #8f3f05;
+  --brand-accent-soft: #fdecdb;
 
-  --canvas: #f7f5f1; /* page background */
+  --canvas: #f6f7f9; /* page background */
   --surface: #ffffff; /* cards, form fields */
-  --sunken: #efebe4; /* alternate sections */
-  --ink: #161513; /* headings, dark sections */
-  --body: #3d3a35; /* body text */
-  --muted: #6b665e; /* secondary text */
-  --line: #e0dbd1; /* borders, dividers */
+  --sunken: #ebeef3; /* alternate sections */
+  --ink: #0a2459; /* logo navy: headings, dark sections */
+  --body: #2c3a5c; /* body text */
+  --muted: #5b6679; /* secondary text */
+  --line: #dde1e9; /* borders, dividers */
 
   --radius: 14px;
 }
 
 @theme inline {
+  --color-orange: var(--brand-orange);
+  --color-orange-hover: var(--brand-orange-hover);
   --color-accent: var(--brand-accent);
   --color-accent-strong: var(--brand-accent-strong);
   --color-accent-soft: var(--brand-accent-soft);
@@ -40,6 +46,7 @@
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-logo: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 
   --radius-brand: var(--radius);
 }
@@ -58,8 +65,8 @@ body {
 }
 
 ::selection {
-  background: var(--brand-accent);
-  color: #fff;
+  background: var(--brand-orange);
+  color: var(--ink);
 }
 
 :focus-visible {

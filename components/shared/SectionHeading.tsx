@@ -42,7 +42,7 @@ export function SectionHeading({
       >
         {parts.map((part, i) =>
           part.startsWith("*") ? (
-            <em key={i} className={cn("italic", tone === "dark" ? "text-accent" : "text-[#ff7a5c]")}>
+            <em key={i} className={cn("italic", tone === "dark" ? "text-accent" : "text-orange")}>
               {part.slice(1, -1)}
             </em>
           ) : (

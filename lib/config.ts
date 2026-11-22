@@ -14,7 +14,7 @@ const digitsOnly = (value: string) => value.replace(/\D/g, "");
 export const siteConfig = {
   /** Brand name used in the navbar, footer, page titles and emails. */
   name: "Threadcore Studios",
-  tagline: "Printing, embroidery, uniforms & branding",
+  tagline: "We Print Your Identity",
   description:
     "Creative printing, embroidery and custom branding solutions that help individuals and businesses make their mark.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://threadcorestudios.com",

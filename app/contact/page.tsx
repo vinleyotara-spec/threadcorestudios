@@ -35,7 +35,7 @@ export default function ContactPage() {
         <Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div className="space-y-8">
             <div className="rounded-[22px] bg-ink p-7 text-white sm:p-9">
-              <MessageCircle aria-hidden="true" className="size-8 text-[#ff7a5c]" />
+              <MessageCircle aria-hidden="true" className="size-8 text-orange" />
               <h2 className="mt-5 font-display text-3xl tracking-tight">Message us on WhatsApp</h2>
               <p className="mt-3 leading-relaxed text-white/70">
                 Send a photo, a sketch or a few lines about what you need.

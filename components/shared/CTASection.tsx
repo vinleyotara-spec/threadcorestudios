@@ -26,7 +26,7 @@ export function CTASection({
             cy="200"
             r="170"
             fill="none"
-            stroke="var(--brand-accent)"
+            stroke="var(--brand-orange)"
             strokeWidth="6"
             strokeLinecap="round"
             strokeDasharray="22 16"
@@ -35,7 +35,7 @@ export function CTASection({
         <h2 className="relative mx-auto max-w-3xl font-display text-4xl leading-[1.08] tracking-tight text-white sm:text-6xl">
           {parts.map((part, i) =>
             part.startsWith("*") ? (
-              <em key={i} className="italic text-[#ff7a5c]">
+              <em key={i} className="italic text-orange">
                 {part.slice(1, -1)}
               </em>
             ) : (

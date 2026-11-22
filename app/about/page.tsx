@@ -38,7 +38,7 @@ export default function AboutPage() {
             <p className="mt-4 font-display text-3xl leading-snug tracking-tight text-ink">{about.mission}</p>
           </div>
           <div className="reveal rounded-[22px] bg-ink p-8 sm:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ff7a5c]">Vision</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange">Vision</p>
             <p className="mt-4 font-display text-3xl leading-snug tracking-tight text-white">{about.vision}</p>
           </div>
         </Container>

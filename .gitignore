@@ -40,3 +40,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# downloaded fonts used by scripts/build-logo.py
+scripts/.fonts/

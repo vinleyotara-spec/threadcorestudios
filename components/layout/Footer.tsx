@@ -32,7 +32,7 @@ export async function Footer() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm text-white transition-colors hover:text-[#ff7a5c]"
+                    className="inline-flex items-center gap-1 text-sm text-white transition-colors hover:text-orange"
                   >
                     {s.label}
                     <ArrowUpRight aria-hidden="true" className="size-3.5" />

@@ -13,12 +13,12 @@ import { fileURLToPath } from "node:url";
 const OUT = join(dirname(fileURLToPath(import.meta.url)), "..", "public", "images", "placeholders");
 mkdirSync(OUT, { recursive: true });
 
-// Neutral base + one accent (matches --brand-accent in app/globals.css)
+// Navy + orange from the logo (matches the brand tokens in app/globals.css)
 const palettes = {
-  sand: { bg: "#ECE7DE", bg2: "#E1DACD", main: "#FBFAF6", shade: "#E4DDCF", detail: "#1B1A18", accent: "#C23B1F" },
-  stone: { bg: "#DCD8D0", bg2: "#CFCAC0", main: "#F4F1EA", shade: "#DDD7CA", detail: "#1B1A18", accent: "#C23B1F" },
-  ink: { bg: "#1A1917", bg2: "#262421", main: "#55514C", shade: "#413E3A", detail: "#F4F0E8", accent: "#E4573A" },
-  clay: { bg: "#C23B1F", bg2: "#B03319", main: "#FBFAF6", shade: "#EAE3D5", detail: "#1B1A18", accent: "#1B1A18" },
+  sand: { bg: "#E8EBF1", bg2: "#DCE1EA", main: "#FBFCFD", shade: "#D9DFE9", detail: "#0A2459", accent: "#FC7E18" },
+  stone: { bg: "#D8DDE8", bg2: "#CAD1DF", main: "#F3F5F9", shade: "#D3D9E5", detail: "#0A2459", accent: "#FC7E18" },
+  ink: { bg: "#08193F", bg2: "#0E2656", main: "#3B5594", shade: "#2B4279", detail: "#F4F6FB", accent: "#FC7E18" },
+  clay: { bg: "#FC7E18", bg2: "#EC6F0B", main: "#FFFFFF", shade: "#FCE7D3", detail: "#0A2459", accent: "#0A2459" },
 };
 
 // ---- helpers ---------------------------------------------------------------

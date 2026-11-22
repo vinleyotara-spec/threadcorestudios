@@ -83,7 +83,7 @@ export async function ApparelManufacturing() {
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">Something else?</span>
               <span className="font-display text-2xl leading-tight tracking-tight">
                 Tell us what your team needs
-                <ArrowRight aria-hidden="true" className="ml-2 inline size-5 text-[#ff7a5c]" />
+                <ArrowRight aria-hidden="true" className="ml-2 inline size-5 text-orange" />
               </span>
             </Link>
           </li>
