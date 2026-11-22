@@ -97,3 +97,43 @@ export const about = {
   commitment:
     "We check the details of every order against your approved artwork before it is finished, and we will always tell you if something needs attention before production begins.",
 };
+
+/**
+ * "How we work" principles on the About page. PLACEHOLDER copy: these read as
+ * commitments, so edit each line to match what the business really does.
+ */
+export const workPrinciples = [
+  {
+    title: "Made around your brief",
+    text: "Sizes, fits, fabrics and designs are tailored to what you need, not limited to a catalogue.",
+  },
+  {
+    title: "Samples before the full run",
+    text: "For larger orders we recommend approving a sample or size set first, so the full run fits and looks right.",
+  },
+  {
+    title: "Materials matched to the job",
+    text: "We help you choose fabrics and finishes that suit how the garment will be worn and washed.",
+  },
+  {
+    title: "Honest timelines",
+    text: "We agree a delivery date with you up front and tell you early if anything threatens it.",
+  },
+  {
+    title: "Clear communication",
+    text: "Updates at each stage, so you always know where your order is.",
+  },
+  {
+    title: "Your designs stay yours",
+    text: "Your artwork, logos and brand concepts are used only for your order, and not reused or shared without your permission.",
+  },
+] as const;
+
+/** Brief-to-delivery steps for made-to-order uniforms and apparel (About page). */
+export const manufacturingProcess = [
+  { title: "Brief", text: "Tell us the garment, fabric, quantities and branding, online or by message." },
+  { title: "Quote", text: "We send an itemised quotation with the production time." },
+  { title: "Sample", text: "A sample or size set is made and approved before the full run." },
+  { title: "Production", text: "Your order is cut, sewn and branded, with updates along the way." },
+  { title: "Delivery", text: "Delivered or ready for collection, checked against your approved sample." },
+] as const;
