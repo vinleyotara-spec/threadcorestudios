@@ -190,8 +190,8 @@ The architecture leaves room for these later phases (none are built yet):
 
 ## Outstanding before launch
 
-- [ ] Set `NEXT_PUBLIC_WHATSAPP_NUMBER`. Until then WhatsApp buttons open WhatsApp with the message ready but no recipient.
-- [ ] Replace the placeholder phone, email, address and social links in `lib/config.ts`.
+- [x] Phone and WhatsApp number set (+254 714 282 240) in `lib/config.ts`.
+- [ ] Replace the placeholder email, address and social links in `lib/config.ts`.
 - [ ] Run `supabase/schema.sql` and set the Supabase variables (forms don't save until you do).
 - [ ] Optional: set the Resend variables for email alerts.
 - [ ] Replace placeholder images and sample portfolio projects with real photography.

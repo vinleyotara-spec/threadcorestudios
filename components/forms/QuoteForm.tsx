@@ -317,7 +317,7 @@ function QuoteFormInner({
             required
             autoComplete="tel"
             inputMode="tel"
-            placeholder="+1 555 123 4567"
+            placeholder="+254 7XX XXX XXX"
             error={errors.phone}
           />
           <TextField

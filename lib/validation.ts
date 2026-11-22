@@ -84,7 +84,7 @@ function phoneError(phone: string): string | null {
   if (!phone) return "Please enter your phone number.";
   const digits = phone.replace(/\D/g, "");
   if (!PHONE_RE.test(phone) || digits.length < 7 || digits.length > 15) {
-    return "Please enter a valid phone number, for example +1 555 123 4567.";
+    return "Please enter a valid phone number, for example +254 712 345 678.";
   }
   return null;
 }

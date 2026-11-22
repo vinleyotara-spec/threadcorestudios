@@ -23,15 +23,13 @@ export const siteConfig = {
   contact: {
     /**
      * WhatsApp number in international format, digits only (no "+", spaces or
-     * leading zeros), e.g. 15551234567.
-     * Set NEXT_PUBLIC_WHATSAPP_NUMBER in your environment. While it is empty,
-     * WhatsApp buttons open WhatsApp with the message ready to send to any
-     * contact, so nothing breaks, but you should set it before launch.
+     * leading zeros). Kenya: 254 followed by the number without its leading 0.
+     * To change it without editing code, set NEXT_PUBLIC_WHATSAPP_NUMBER in Vercel.
      */
-    whatsappNumber: digitsOnly(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? ""),
+    whatsappNumber: digitsOnly(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "254714282240"),
 
-    /** PLACEHOLDER: replace with the real telephone number. */
-    phone: "+00 000 000 0000",
+    /** Telephone number shown on the site (and used for tap-to-call). */
+    phone: "+254 714 282 240",
     /** PLACEHOLDER: replace with the real enquiries inbox. */
     email: "hello@threadcorestudios.com",
     /** PLACEHOLDER: replace with the real studio address. */
