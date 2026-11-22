@@ -17,15 +17,15 @@ export function ClientLogos() {
         <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 sm:gap-x-14">
           {clients.map((c) => {
             const inner = c.logo ? (
-              // A fixed box so wide and tall logos sit evenly side by side. `mix-blend-multiply`
-              // hides white backgrounds on JPG/PNG logos; the logo turns to full colour on hover.
+              // A fixed box so wide and tall logos sit evenly side by side. Logos keep their own
+              // colours (never recoloured). `mix-blend-multiply` hides white backgrounds on JPG logos.
               <span className="relative block h-12 w-32 sm:h-14 sm:w-40">
                 <Image
                   src={c.logo}
                   alt={c.name}
                   fill
                   sizes="160px"
-                  className="object-contain opacity-80 mix-blend-multiply grayscale transition hover:opacity-100 hover:grayscale-0"
+                  className="object-contain mix-blend-multiply"
                 />
               </span>
             ) : (
