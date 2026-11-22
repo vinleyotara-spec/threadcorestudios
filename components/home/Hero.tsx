@@ -85,7 +85,7 @@ export function Hero() {
       {/* Quiet ribbon under the hero */}
       <div className="border-y border-line bg-surface/60">
         <Container className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 py-4 text-sm text-muted">
-          <p>Printing · Embroidery · Apparel branding</p>
+          <p>Printing · Embroidery · Uniforms · Apparel branding</p>
           <Link href="/portfolio" className="font-medium text-ink underline-offset-4 hover:text-accent hover:underline">
             See our work →
           </Link>

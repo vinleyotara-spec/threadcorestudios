@@ -7,7 +7,7 @@
  */
 
 export const hero = {
-  eyebrow: "Printing · Embroidery · Branding",
+  eyebrow: "Printing · Embroidery · Uniforms · Branding",
   headline: ["Bring Your", "Ideas", "to Life."],
   /** The word in `headline` to highlight in the accent colour. */
   highlight: "Ideas",
@@ -69,7 +69,7 @@ export const about = {
   intro:
     "Thread Core Studios is a creative printing, embroidery and branding studio. We help individuals and businesses turn ideas into printed and stitched products they are proud to put their name on.",
   story: [
-    "We are starting with printing and embroidery, and building towards a wider range of ways to bring a brand to life, from apparel and promotional merchandise to packaging and signage.",
+    "We are starting with printing and embroidery, and building towards a wider range of ways to bring a brand to life, including made-to-order uniforms and apparel, promotional merchandise, packaging and signage.",
     "Every project starts with a conversation about what you want to achieve. From there we recommend the right materials and methods, and keep you informed until your order is in your hands.",
   ],
   mission:

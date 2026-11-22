@@ -248,6 +248,105 @@ ${bars(290, 400, [260, 160], { detail: p.main }, { h: 22, gap: 18 })}
 ${bars(250, 530, [380, 300], p, { h: 12, gap: 24, opacity: 0.55 })}`;
 }
 
+
+// ---- uniform / apparel-manufacturing shapes ---------------------------------
+
+const BODY_SHORT = "M345 235 L430 205 Q500 270 570 205 L655 235 L800 345 L735 432 L670 388 L670 812 L330 812 L330 388 L265 432 L200 345 Z";
+
+function corporate(p) {
+  return `
+<path d="M345 235 L430 205 L500 272 L570 205 L655 235 L800 345 L735 432 L670 388 L670 812 L330 812 L330 388 L265 432 L200 345 Z" fill="${p.main}" stroke="${p.shade}" stroke-width="3"/>
+<path d="M430 205 L388 262 L492 336 L500 272 Z" fill="${p.shade}" stroke="${p.detail}" stroke-opacity=".25" stroke-width="2"/>
+<path d="M570 205 L612 262 L508 336 L500 272 Z" fill="${p.shade}" stroke="${p.detail}" stroke-opacity=".25" stroke-width="2"/>
+<path d="M500 300 L528 340 L516 365 L552 760 L500 800 L448 760 L484 365 L472 340 Z" fill="${p.accent}"/>
+<path d="M472 338 L528 338 L520 372 L480 372 Z" fill="${p.detail}" opacity=".25"/>
+<rect x="364" y="470" width="86" height="78" rx="6" fill="none" stroke="${p.shade}" stroke-width="4"/>
+${mark(407, 505, 18, p)}`;
+}
+
+function scrubs(p) {
+  return `
+<path d="M345 235 L430 205 L500 335 L570 205 L655 235 L800 345 L735 432 L670 388 L670 812 L330 812 L330 388 L265 432 L200 345 Z" fill="${p.main}" stroke="${p.shade}" stroke-width="3"/>
+<path d="M430 205 L500 335 L570 205" fill="none" stroke="${p.accent}" stroke-width="12" stroke-linejoin="round"/>
+<rect x="545" y="500" width="100" height="120" rx="8" fill="none" stroke="${p.shade}" stroke-width="5"/>
+<path d="M550 548 L640 548" stroke="${p.shade}" stroke-width="4"/>
+<path d="M300 400 L268 428 M700 400 L732 428" stroke="${p.accent}" stroke-width="10" stroke-linecap="round"/>
+${mark(380, 540, 26, p, { stitched: true })}`;
+}
+
+function security(p) {
+  return `
+<path d="M345 235 L430 205 L500 272 L570 205 L655 235 L800 345 L735 432 L670 388 L670 812 L330 812 L330 388 L265 432 L200 345 Z" fill="${p.main}" stroke="${p.shade}" stroke-width="3"/>
+<path d="M430 205 L388 262 L492 336 L500 272 Z" fill="${p.shade}"/>
+<path d="M570 205 L612 262 L508 336 L500 272 Z" fill="${p.shade}"/>
+<rect x="488" y="272" width="24" height="520" fill="${p.shade}" opacity=".6"/>
+<path d="M352 246 L420 222 L430 262 L360 286 Z M648 246 L580 222 L570 262 L640 286 Z" fill="${p.detail}" opacity=".7"/>
+<circle cx="404" cy="244" r="6" fill="${p.accent}"/><circle cx="596" cy="244" r="6" fill="${p.accent}"/>
+<rect x="545" y="470" width="96" height="92" rx="6" fill="none" stroke="${p.shade}" stroke-width="5"/>
+<path d="M545 498 L641 498" stroke="${p.shade}" stroke-width="4"/>
+<path d="M392 456 L452 456 L452 520 L422 548 L392 520 Z" fill="${p.accent}"/>
+<circle cx="422" cy="496" r="11" fill="${p.main}"/>`;
+}
+
+function safari(p) {
+  const pocket = (x, y, w, h) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6" fill="${p.shade}" stroke="${p.detail}" stroke-opacity=".25" stroke-width="3"/><path d="M${x} ${y + 22} L${x + w} ${y + 22}" stroke="${p.detail}" stroke-opacity=".3" stroke-width="3"/><circle cx="${x + w / 2}" cy="${y + 22}" r="5" fill="${p.detail}" opacity=".6"/>`;
+  return `
+<path d="M345 235 L430 205 L500 272 L570 205 L655 235 L800 345 L735 432 L670 388 L670 812 L330 812 L330 388 L265 432 L200 345 Z" fill="${p.main}" stroke="${p.shade}" stroke-width="3"/>
+<path d="M430 205 L388 262 L492 336 L500 272 Z" fill="${p.shade}"/>
+<path d="M570 205 L612 262 L508 336 L500 272 Z" fill="${p.shade}"/>
+<rect x="488" y="272" width="24" height="540" fill="${p.shade}" opacity=".7"/>
+${[330, 410, 490, 570, 650, 730].map((y) => `<circle cx="500" cy="${y}" r="6" fill="${p.detail}" opacity=".6"/>`).join("")}
+${pocket(356, 440, 100, 96)}${pocket(544, 440, 100, 96)}
+${pocket(352, 640, 108, 100)}${pocket(540, 640, 108, 100)}
+<path d="M236 372 L286 330 M764 372 L714 330" stroke="${p.accent}" stroke-width="12" stroke-linecap="round"/>
+${mark(580, 400, 16, p, { stitched: true })}`;
+}
+
+function jersey(p) {
+  return `
+<path d="${BODY_SHORT}" fill="${p.main}" stroke="${p.shade}" stroke-width="3"/>
+<path d="M432 208 Q500 292 568 208" fill="none" stroke="${p.accent}" stroke-width="16" stroke-linecap="round"/>
+<path d="M345 235 L330 388 M655 235 L670 388" stroke="${p.accent}" stroke-width="14"/>
+<path d="M200 345 L265 432 M800 345 L735 432" stroke="${p.accent}" stroke-width="16" stroke-linecap="round"/>
+<text x="500" y="590" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="190" fill="${p.detail}">10</text>
+<rect x="418" y="630" width="164" height="12" rx="6" fill="${p.accent}"/>`;
+}
+
+function robe(p) {
+  return `
+<path d="M390 222 L450 202 Q500 252 550 202 L610 222 L700 330 L668 408 L644 384 L664 834 L336 834 L356 384 L332 408 L300 330 Z" fill="${p.main}" stroke="${p.shade}" stroke-width="3"/>
+<path d="M450 202 Q500 252 550 202" fill="none" stroke="${p.shade}" stroke-width="12" stroke-linecap="round"/>
+<path d="M460 236 L428 834 L478 834 L500 300 Z" fill="${p.accent}"/>
+<path d="M540 236 L572 834 L522 834 L500 300 Z" fill="${p.accent}"/>
+<path d="M428 790 L478 790 M522 790 L572 790" stroke="${p.main}" stroke-width="8" stroke-dasharray="6 8"/>
+<path d="M356 384 L664 384" stroke="${p.shade}" stroke-width="3" opacity=".7"/>`;
+}
+
+function coverall(p) {
+  return `
+<path d="M360 232 L440 210 L500 255 L560 210 L640 232 L722 302 L766 526 L704 546 L672 404 L682 832 L540 832 L500 560 L460 832 L318 832 L328 404 L296 546 L234 526 L278 302 Z" fill="${p.main}" stroke="${p.shade}" stroke-width="3"/>
+<path d="M440 210 L396 268 L488 330 L500 255 Z" fill="${p.shade}"/>
+<path d="M560 210 L604 268 L512 330 L500 255 Z" fill="${p.shade}"/>
+<path d="M500 255 L500 560" stroke="${p.detail}" stroke-width="5" stroke-dasharray="10 6" opacity=".8"/>
+<rect x="326" y="456" width="348" height="30" fill="${p.accent}"/>
+<path d="M322 700 L478 700 L474 730 L320 730 Z M522 700 L678 700 L680 730 L526 730 Z" fill="${p.accent}"/>
+<path d="M286 538 L242 526 M714 538 L758 526" stroke="${p.accent}" stroke-width="22"/>
+<rect x="372" y="360" width="84" height="76" rx="6" fill="none" stroke="${p.shade}" stroke-width="5"/>
+<rect x="544" y="360" width="84" height="76" rx="6" fill="none" stroke="${p.shade}" stroke-width="5"/>`;
+}
+
+/** Places a garment smaller and off-centre, for composite illustrations. */
+const scaled = (inner, s, cx, bottom) =>
+  `<g transform="translate(${(cx - 500 * s).toFixed(1)} ${(bottom - 832 * s).toFixed(1)}) scale(${s})">${inner}</g>`;
+
+function manufacturingSet(p) {
+  return (
+    scaled(scrubs(p), 0.62, 262, 800) +
+    scaled(jersey(p), 0.62, 738, 800) +
+    scaled(corporate(p), 0.8, 500, 830)
+  );
+}
+
 // ---- manifest --------------------------------------------------------------
 
 const art = {
@@ -285,6 +384,16 @@ const art = {
   labels: () => wrap(palettes.sand, labels(palettes.sand)),
   signage: () => wrap(palettes.stone, sign(palettes.stone)),
   "personalised-gifts": () => wrap(palettes.clay, giftbox(palettes.clay)),
+
+  // apparel manufacturing
+  "category-manufacturing": () => wrap(palettes.ink, manufacturingSet(palettes.ink)),
+  "corporate-uniforms": () => wrap(palettes.stone, corporate(palettes.stone)),
+  "healthcare-uniforms": () => wrap(palettes.sand, scrubs(palettes.sand)),
+  "security-uniforms": () => wrap(palettes.ink, security(palettes.ink)),
+  "safari-tour-uniforms": () => wrap(palettes.sand, safari(palettes.sand)),
+  "sports-uniforms": () => wrap(palettes.clay, jersey(palettes.clay)),
+  "religious-wear": () => wrap(palettes.stone, robe(palettes.stone)),
+  "industrial-workwear": () => wrap(palettes.ink, coverall(palettes.ink)),
 
   // portfolio samples
   "portfolio-stationery": () => wrap(palettes.ink, cards(palettes.ink)),

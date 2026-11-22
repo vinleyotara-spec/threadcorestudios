@@ -53,6 +53,27 @@ export const serviceCategories: ServiceCategory[] = [
     display_order: 3,
   },
   {
+    id: "apparel-manufacturing",
+    name: "Apparel Manufacturing",
+    slug: "apparel-manufacturing",
+    description:
+      "Made-to-order uniforms and apparel for corporate, healthcare, security, safari and tour, sports, industrial and religious needs.",
+    image: img("category-manufacturing"),
+    // Shown in its own homepage section (components/home/ApparelManufacturing.tsx),
+    // so it is not repeated in the six-card overview grid.
+    status: "coming_soon", // change to "active" when you are ready to take orders
+    featured: false,
+    standalone: true,
+    display_order: 4,
+    requestChecklist: [
+      "How many garments you need, and the size range",
+      "Fabric, colour and style preferences",
+      "Your logo, badges or embroidery details",
+      "An existing uniform or sample we should match, if you have one",
+      "The date you need the order by",
+    ],
+  },
+  {
     id: "promotional-products",
     name: "Promotional Products",
     slug: "promotional-products",
@@ -61,7 +82,7 @@ export const serviceCategories: ServiceCategory[] = [
     image: img("category-promotional"),
     status: "coming_soon",
     featured: true,
-    display_order: 4,
+    display_order: 5,
   },
   {
     id: "corporate-gifts",
@@ -72,7 +93,7 @@ export const serviceCategories: ServiceCategory[] = [
     image: img("category-gifts"),
     status: "coming_soon",
     featured: true,
-    display_order: 5,
+    display_order: 6,
   },
   {
     id: "custom-products",
@@ -83,7 +104,7 @@ export const serviceCategories: ServiceCategory[] = [
     image: img("category-custom"),
     status: "coming_soon",
     featured: true,
-    display_order: 6,
+    display_order: 7,
   },
 ];
 
@@ -248,6 +269,92 @@ export const services: Service[] = [
     status: "active",
     featured: false,
     display_order: 3,
+  },
+
+  // ---- Apparel manufacturing ----------------------------------------------
+  {
+    id: "svc-corporate-uniforms",
+    name: "Corporate Uniforms",
+    slug: "corporate-uniforms",
+    description:
+      "Made-to-order uniforms for offices, hotels, restaurants and other businesses, in your colours and with your branding. Coming soon. Tell us what you need.",
+    category: "apparel-manufacturing",
+    image: img("corporate-uniforms"),
+    status: "coming_soon",
+    featured: false,
+    display_order: 1,
+  },
+  {
+    id: "svc-healthcare-uniforms",
+    name: "Healthcare Uniforms",
+    slug: "healthcare-uniforms",
+    description:
+      "Scrubs, tunics and uniforms for clinics, hospitals and care teams, made for comfort through long shifts. Coming soon. Tell us what you need.",
+    category: "apparel-manufacturing",
+    image: img("healthcare-uniforms"),
+    status: "coming_soon",
+    featured: false,
+    display_order: 2,
+  },
+  {
+    id: "svc-security-uniforms",
+    name: "Security Uniforms",
+    slug: "security-uniforms",
+    description:
+      "Shirts, trousers and jackets for security teams, finished with badges and branding. Coming soon. Tell us what you need.",
+    category: "apparel-manufacturing",
+    image: img("security-uniforms"),
+    status: "coming_soon",
+    featured: false,
+    display_order: 3,
+  },
+  {
+    id: "svc-safari-tour-uniforms",
+    name: "Safari & Tour Uniforms",
+    slug: "safari-tour-uniforms",
+    description:
+      "Practical, branded clothing for guides, drivers and tour operators. Coming soon. Tell us what you need.",
+    category: "apparel-manufacturing",
+    image: img("safari-tour-uniforms"),
+    status: "coming_soon",
+    featured: false,
+    display_order: 4,
+  },
+  {
+    id: "svc-sports-uniforms",
+    name: "Sports Uniforms",
+    slug: "sports-uniforms",
+    description:
+      "Jerseys, shorts and tracksuits for teams, schools and clubs, with your colours, names and numbers. Coming soon. Tell us what you need.",
+    category: "apparel-manufacturing",
+    image: img("sports-uniforms"),
+    status: "coming_soon",
+    featured: false,
+    display_order: 5,
+  },
+  {
+    id: "svc-religious-wear",
+    name: "Religious Wear",
+    slug: "religious-wear",
+    description:
+      "Made-to-order garments for congregations, choirs, clergy and ceremonies, made to your specification. Coming soon. Tell us what you need.",
+    category: "apparel-manufacturing",
+    image: img("religious-wear"),
+    status: "coming_soon",
+    featured: false,
+    display_order: 6,
+  },
+  {
+    id: "svc-industrial-workwear",
+    name: "Industrial Workwear",
+    slug: "industrial-workwear",
+    description:
+      "Durable overalls, coveralls and work clothing for factories, workshops and site teams, with branding if you need it. Coming soon. Tell us what you need.",
+    category: "apparel-manufacturing",
+    image: img("industrial-workwear"),
+    status: "coming_soon",
+    featured: false,
+    display_order: 7,
   },
 
   // ---- Future services ----------------------------------------------------

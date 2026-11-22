@@ -15,6 +15,13 @@ export interface ServiceCategory {
   status: AvailabilityStatus;
   featured: boolean;
   display_order: number;
+  /**
+   * Show as its own section on the Services page even while `coming_soon`
+   * (otherwise coming-soon categories are grouped under "Future services").
+   */
+  standalone?: boolean;
+  /** Replaces the default "What to include in your request" list on service pages. */
+  requestChecklist?: string[];
 }
 
 /** A single service / product line, e.g. "Business cards". */

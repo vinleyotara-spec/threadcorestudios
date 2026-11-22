@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Services",
   description:
-    "Printing, embroidery and apparel branding, with more services on the way. Request a quote for business cards, flyers, caps, polo shirts, T-shirts and more.",
+    "Printing, embroidery, apparel branding and made-to-order uniforms, with more services on the way. Request a quote for business cards, caps, T-shirts, corporate, healthcare, security and sports uniforms and more.",
   path: "/services",
 });
 
@@ -19,8 +19,8 @@ export default async function ServicesPage() {
   // One expandable section per available category. Categories that are still
   // "coming soon" are grouped into a single "Future services" section; when one
   // becomes active it automatically gets its own section.
-  const live = categories.filter((c) => c.status === "active");
-  const upcoming = categories.filter((c) => c.status === "coming_soon");
+  const live = categories.filter((c) => c.status === "active" || c.standalone);
+  const upcoming = categories.filter((c) => c.status === "coming_soon" && !c.standalone);
 
   const sections: AccordionSection[] = live.map((c) => ({
     id: c.slug,

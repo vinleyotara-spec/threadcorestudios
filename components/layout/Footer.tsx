@@ -123,7 +123,7 @@ export async function Footer() {
           <p>
             &copy; {year} {siteConfig.name}. All rights reserved.
           </p>
-          <p>Printing · Embroidery · Branding</p>
+          <p>Printing · Embroidery · Uniforms · Branding</p>
         </Container>
       </div>
     </footer>

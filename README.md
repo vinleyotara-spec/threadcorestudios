@@ -111,6 +111,12 @@ page, gets its own `/services/<slug>` page, joins the quote form's product list 
 - To add a whole new line of business (e.g. Packaging), add an entry to `serviceCategories`, then
   services whose `category` is its slug. Categories marked `coming_soon` are grouped under
   "Future services"; set one to `active` and it gets its own section automatically.
+- `standalone: true` on a category gives it its own section on the Services page even while `coming_soon`
+  (used by Apparel Manufacturing). `requestChecklist` replaces the default "What to include in your request" list.
+- **Apparel Manufacturing** (corporate, healthcare, security, safari and tour, sports, industrial and religious
+  uniforms) is currently `coming_soon`. Change its `status` to `"active"` in `lib/services.ts` (and each of its
+  services) when you are ready to take orders. It also has its own homepage section,
+  `components/home/ApparelManufacturing.tsx`, built from the same data.
 - There are no prices anywhere: all pricing is by quotation.
 
 ### Portfolio

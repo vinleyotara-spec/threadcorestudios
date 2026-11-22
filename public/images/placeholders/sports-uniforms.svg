@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-label="Placeholder illustration">
+<rect width="1000" height="1000" fill="#C23B1F"/>
+<circle cx="500" cy="500" r="390" fill="#B03319"/>
+<g stroke="#1B1A18" stroke-opacity=".28" stroke-width="2" fill="none"><circle cx="130" cy="150" r="11"/><path d="M108 150h44M130 128v44"/></g><g stroke="#1B1A18" stroke-opacity=".28" stroke-width="2" fill="none"><circle cx="870" cy="150" r="11"/><path d="M848 150h44M870 128v44"/></g><g stroke="#1B1A18" stroke-opacity=".28" stroke-width="2" fill="none"><circle cx="130" cy="850" r="11"/><path d="M108 850h44M130 828v44"/></g><g stroke="#1B1A18" stroke-opacity=".28" stroke-width="2" fill="none"><circle cx="870" cy="850" r="11"/><path d="M848 850h44M870 828v44"/></g>
+<ellipse cx="500" cy="852" rx="270" ry="20" fill="#000" opacity=".14"/>
+
+<path d="M345 235 L430 205 Q500 270 570 205 L655 235 L800 345 L735 432 L670 388 L670 812 L330 812 L330 388 L265 432 L200 345 Z" fill="#FBFAF6" stroke="#EAE3D5" stroke-width="3"/>
+<path d="M432 208 Q500 292 568 208" fill="none" stroke="#1B1A18" stroke-width="16" stroke-linecap="round"/>
+<path d="M345 235 L330 388 M655 235 L670 388" stroke="#1B1A18" stroke-width="14"/>
+<path d="M200 345 L265 432 M800 345 L735 432" stroke="#1B1A18" stroke-width="16" stroke-linecap="round"/>
+<text x="500" y="590" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="190" fill="#1B1A18">10</text>
+<rect x="418" y="630" width="164" height="12" rx="6" fill="#1B1A18"/>
+</svg>

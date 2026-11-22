@@ -1,3 +1,4 @@
+import { ApparelManufacturing } from "@/components/home/ApparelManufacturing";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 import { Hero } from "@/components/home/Hero";
 import { HowItWorks } from "@/components/home/HowItWorks";
@@ -10,6 +11,7 @@ export default function HomePage() {
     <>
       <Hero />
       <ServicesOverview />
+      <ApparelManufacturing />
       <WhyChooseUs />
       <FeaturedProjects />
       <HowItWorks />

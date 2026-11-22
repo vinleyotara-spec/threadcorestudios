@@ -28,7 +28,7 @@ export async function generateMetadata(props: PageProps<"/services/[slug]">): Pr
   });
 }
 
-const includeInRequest = [
+const defaultChecklist = [
   "The quantity you need",
   "Sizes, colours or garment details",
   "Your logo or artwork, if you have it",
@@ -45,6 +45,7 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
     getRelatedServices(service, 3),
   ]);
   const comingSoon = service.status === "coming_soon";
+  const checklist = category?.requestChecklist ?? defaultChecklist;
 
   return (
     <>
@@ -101,7 +102,7 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
               What to include in your request
             </h2>
             <ul className="mt-4 space-y-3">
-              {includeInRequest.map((item) => (
+              {checklist.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <Check aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-accent" />
                   <span>{item}</span>
