@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/config";
+import { LOGO_CORE, LOGO_SPIRAL, LOGO_STROKE, LOGO_TAIL, LOGO_VIEWBOX } from "@/lib/logo-geometry";
 
 export const alt = `${siteConfig.name}: ${siteConfig.tagline}`;
 export const size = { width: 1200, height: 630 };
@@ -22,19 +23,13 @@ export default function OpengraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div
-            style={{
-              width: 56,
-              height: 56,
-              borderRadius: 999,
-              border: "7px dashed #e4573a",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <div style={{ width: 18, height: 18, borderRadius: 999, background: "#fff" }} />
-          </div>
+          <svg width="84" height="84" viewBox={LOGO_VIEWBOX}>
+            <g fill="none" stroke="#ff6a47" strokeWidth={LOGO_STROKE} strokeLinecap="round" strokeLinejoin="round">
+              <path d={LOGO_SPIRAL} />
+              <path d={LOGO_TAIL} />
+            </g>
+            <circle cx={LOGO_CORE.cx} cy={LOGO_CORE.cy} r={LOGO_CORE.r} fill="#ffffff" />
+          </svg>
           <div style={{ fontSize: 34, fontWeight: 600 }}>{siteConfig.name}</div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>

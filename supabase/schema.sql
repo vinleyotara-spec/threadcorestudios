@@ -1,4 +1,4 @@
--- Thread Core Studios: database schema
+-- Threadcore Studios: database schema
 -- Run this once in the Supabase SQL editor (Dashboard -> SQL Editor -> New query).
 -- It is safe to re-run.
 --

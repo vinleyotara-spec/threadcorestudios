@@ -13,7 +13,7 @@ const digitsOnly = (value: string) => value.replace(/\D/g, "");
 
 export const siteConfig = {
   /** Brand name used in the navbar, footer, page titles and emails. */
-  name: "Thread Core Studios",
+  name: "Threadcore Studios",
   tagline: "Printing, embroidery, uniforms & branding",
   description:
     "Creative printing, embroidery and custom branding solutions that help individuals and businesses make their mark.",

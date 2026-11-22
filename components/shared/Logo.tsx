@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { LogoMark } from "@/components/shared/LogoMark";
 import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 
 /**
- * Temporary wordmark: a stitched ring mark plus the business name from
- * lib/config.ts. Replace the <svg> (or swap in an <Image>) when a real logo exists.
+ * Threadcore Studios lockup: the thread-ball mark, the one-word "Threadcore"
+ * wordmark and a small "STUDIOS" descriptor. The text is taken from
+ * siteConfig.name, so a rename in lib/config.ts flows through.
  */
 export function Logo({
   className,
@@ -13,32 +15,35 @@ export function Logo({
   className?: string;
   tone?: "dark" | "light";
 }) {
+  const [word, ...rest] = siteConfig.name.split(" ");
+  const descriptor = rest.join(" ");
+
   return (
     <Link
       href="/"
       aria-label={`${siteConfig.name}, home`}
       className={cn("inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap", className)}
     >
-      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true" className="shrink-0">
-        <circle
-          cx="16"
-          cy="16"
-          r="13"
-          fill="none"
-          stroke="var(--brand-accent)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeDasharray="6 4.2"
-        />
-        <circle cx="16" cy="16" r="5.5" fill={tone === "dark" ? "var(--ink)" : "#fff"} />
-      </svg>
-      <span
-        className={cn(
-          "font-display text-[1.15rem] font-semibold leading-none tracking-tight",
-          tone === "dark" ? "text-ink" : "text-white",
+      <LogoMark tone={tone} className="size-10 shrink-0" />
+      <span className="flex flex-col leading-none">
+        <span
+          className={cn(
+            "font-display text-[1.4rem] font-semibold tracking-[-0.02em]",
+            tone === "dark" ? "text-ink" : "text-white",
+          )}
+        >
+          {word}
+        </span>
+        {descriptor && (
+          <span
+            className={cn(
+              "mt-1 text-[0.58rem] font-semibold uppercase tracking-[0.36em]",
+              tone === "dark" ? "text-accent" : "text-white/70",
+            )}
+          >
+            {descriptor}
+          </span>
         )}
-      >
-        {siteConfig.name}
       </span>
     </Link>
   );

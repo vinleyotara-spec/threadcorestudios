@@ -10,7 +10,7 @@ import { whatsappMessages, whatsappUrl } from "@/lib/whatsapp";
 
 export const metadata = pageMetadata({
   title: "Contact",
-  description: "Get in touch with Thread Core Studios by WhatsApp, phone, email or the contact form.",
+  description: "Get in touch with Threadcore Studios by WhatsApp, phone, email or the contact form.",
   path: "/contact",
 });
 
