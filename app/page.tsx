@@ -1,5 +1,6 @@
 import { ApparelManufacturing } from "@/components/home/ApparelManufacturing";
 import { ClientLogos } from "@/components/home/ClientLogos";
+import { FAQ } from "@/components/home/FAQ";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 import { Hero } from "@/components/home/Hero";
 import { HowItWorks } from "@/components/home/HowItWorks";
@@ -17,6 +18,7 @@ export default function HomePage() {
       <WhyChooseUs />
       <FeaturedProjects />
       <HowItWorks />
+      <FAQ />
       <CTASection />
     </>
   );

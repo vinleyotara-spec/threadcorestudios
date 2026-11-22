@@ -7,6 +7,15 @@ import { WhatsAppButton } from "@/components/shared/WhatsAppButton";
 import { siteConfig } from "@/lib/config";
 import { whatsappMessages } from "@/lib/whatsapp";
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  logo: `${siteConfig.url}/brand/threadcore-profile.png`,
+  description: siteConfig.description,
+};
+
 const geist = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -54,6 +63,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geist.variable} ${fraunces.variable}`}>
       <body className="flex min-h-screen flex-col">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-sm focus:font-medium focus:text-white"

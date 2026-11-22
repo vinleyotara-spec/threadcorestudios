@@ -72,6 +72,13 @@ export const serviceCategories: ServiceCategory[] = [
       "An existing uniform or sample we should match, if you have one",
       "The date you need the order by",
     ],
+    resources: [
+      {
+        label: "Download the uniform size sheet",
+        description: "Ordering for a team? List each person's garment and size, then send it with your quote request.",
+        href: "/downloads/threadcore-uniform-size-sheet.csv",
+      },
+    ],
   },
   {
     id: "promotional-products",

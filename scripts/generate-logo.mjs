@@ -1,19 +1,24 @@
 /**
- * Generates the Threadcore Studios logo mark.
+ * Threadcore Studios logo.
  *
- * The mark is a ball of thread: a solid CORE with one continuous THREAD that
- * winds out from it and trails away as a loose end. It is drawn from simple
- * geometry so it is exact, scales from favicon to signage, and can be
- * regenerated if the proportions are tweaked below.
+ * CONCEPT: a "T" made from a needle and thread.
+ *   - The NEEDLE is the stem of the T. Its eye is a real slot.
+ *   - The THREAD passes through the eye and forms the crossbar.
+ *   - To the right of the needle the thread becomes RUNNING STITCHES that taper
+ *     away: thread turning into embroidery.
+ * It reads as a "T" for Threadcore, says "stitch / make" at a glance, uses two
+ * flat colours, and is simple enough to be embroidered or screen printed itself.
  *
  * Outputs
- *   lib/logo-geometry.ts                   path data used by <LogoMark /> and the share image
- *   public/brand/threadcore-mark.svg       mark, for light backgrounds
- *   public/brand/threadcore-mark-light.svg mark, for dark backgrounds
- *   app/icon.svg                           favicon / app icon (badge)
+ *   lib/logo-geometry.ts                       path data for <LogoMark /> and the share image
+ *   public/brand/threadcore-mark.svg           mark, for light backgrounds
+ *   public/brand/threadcore-mark-light.svg     mark, for dark backgrounds
+ *   public/brand/threadcore-mark-black.svg     one colour, black (print, stamps, vinyl)
+ *   public/brand/threadcore-mark-white.svg     one colour, white
+ *   app/icon.svg                               favicon (chunkier, designed for 16px)
  *
  * Run: node scripts/generate-logo.mjs
- * The PNG exports in public/brand were rendered from these SVGs with Fraunces SemiBold for the wordmark.
+ * PNG exports and the brand board were rendered from these with Fraunces SemiBold.
  */
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -21,73 +26,93 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-// ---- proportions (viewBox is 0 0 100 100) ------------------------------------
-const CX = 50;
-const CY = 48;
-const CORE_R = 14.5; // solid centre, drawn on top so the thread appears to emerge from beneath it
-const START_R = 8; // where the thread starts (hidden under the core)
-const END_R = 39.5; // radius where the winding stops
-const TURNS = 3; // how many times the thread winds
-const STROKE = 5.4; // thread thickness
-
 const INK = "#161513";
 const ACCENT = "#c23b1f";
 const ACCENT_ON_DARK = "#ff6a47";
 
-// ---- geometry ---------------------------------------------------------------
-const round = (n) => Math.round(n * 100) / 100;
-const k = (END_R - START_R) / (TURNS * 2 * Math.PI); // Archimedean spiral: r = START_R + k * theta
+/**
+ * Builds the mark in a 120x120 box.
+ * @param {number} wn  needle width multiplier (1 = brand mark, >1 = chunkier for tiny sizes)
+ * @param {number} tw  thread thickness
+ */
+function build({ wn = 1, tw = 9 } = {}) {
+  const cx = 60;
+  const hw = 10.5 * wn; // half-width of the needle
+  const r = 16.5; // y of the needle's rounded top centre (top of the mark is y = r - hw)
+  const shoulder = 66; // where the needle starts to taper
+  const tipY = 112;
+  const eyeHalfW = 3.6 * wn;
+  const eyeTop = 24;
+  const eyeBot = 44;
+  const y = 34; // the thread runs through the middle of the eye
 
-const points = [];
-const steps = TURNS * 90;
-for (let i = 0; i <= steps; i++) {
-  const theta = (i / steps) * TURNS * 2 * Math.PI;
-  const r = START_R + k * theta;
-  points.push([CX + r * Math.cos(theta), CY + r * Math.sin(theta)]);
+  const f = (n) => Math.round(n * 100) / 100;
+  const needle =
+    `M${f(cx - hw)} ${r}A${f(hw)} ${f(hw)} 0 0 1 ${f(cx + hw)} ${r}` +
+    `L${f(cx + hw)} ${shoulder}Q${f(cx + hw)} 92 ${cx} ${tipY}Q${f(cx - hw)} 92 ${f(cx - hw)} ${shoulder}Z`;
+  const eye =
+    `M${f(cx - eyeHalfW)} ${eyeTop}A${f(eyeHalfW)} ${f(eyeHalfW)} 0 0 1 ${f(cx + eyeHalfW)} ${eyeTop}` +
+    `V${eyeBot}A${f(eyeHalfW)} ${f(eyeHalfW)} 0 0 1 ${f(cx - eyeHalfW)} ${eyeBot}Z`;
+
+  // The thread is drawn BEHIND the needle and runs on past the eye, so it is
+  // visible through the eye slot and appears to pass through the needle.
+  const thread = `M${f(6 + tw / 2)} ${y}H${f(cx + 6)}`;
+
+  // Running stitches to the right of the needle. They taper in length, like the
+  // thread being sewn away. Each is [visualStart, visualEnd]; the round caps add
+  // tw/2 to each end, so the drawn segment is inset by that amount.
+  const stitches = [
+    [66, 83],
+    [88, 101],
+    [106, 114],
+  ]
+    .map(([a, b]) => `M${f(a + tw / 2)} ${y}H${f(Math.max(a + tw / 2, b - tw / 2))}`)
+    .join("");
+  return { needle: `${needle}${eye}`, thread, stitches, tw, y };
 }
-const spiral = "M" + points.map(([x, y]) => `${round(x)} ${round(y)}`).join("L");
 
-// The thread ends at the rightmost point heading downwards; let it trail off as a loose end.
-const [ex, ey] = points[points.length - 1];
-const tail = `M${round(ex)} ${round(ey)}C${round(ex)} ${round(ey + 18)} ${round(ex - 4)} ${round(ey + 34)} ${round(ex - 20)} ${round(ey + 42)}`;
+const mark = build();
+const chunky = build({ wn: 1.25, tw: 13 });
 
-const svgMark = ({ core, thread, size = 100 }) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="${size}" height="${size}" role="img" aria-label="Threadcore Studios">
-  <g fill="none" stroke="${thread}" stroke-width="${STROKE}" stroke-linecap="round" stroke-linejoin="round">
-    <path d="${spiral}"/>
-    <path d="${tail}"/>
+const svgMark = (m, { needle, thread, size = 120 }) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="${size}" height="${size}" role="img" aria-label="Threadcore Studios">
+  <g fill="none" stroke="${thread}" stroke-width="${m.tw}" stroke-linecap="round">
+    <path d="${m.thread}"/>
+    <path d="${m.stitches}"/>
   </g>
-  <circle cx="${CX}" cy="${CY}" r="${CORE_R}" fill="${core}"/>
+  <path d="${m.needle}" fill="${needle}" fill-rule="evenodd"/>
 </svg>
 `;
 
-// ---- outputs ----------------------------------------------------------------
 mkdirSync(join(ROOT, "public", "brand"), { recursive: true });
 
 writeFileSync(
   join(ROOT, "lib", "logo-geometry.ts"),
   `// GENERATED by scripts/generate-logo.mjs. Do not edit by hand.
-export const LOGO_VIEWBOX = "0 0 100 100";
-export const LOGO_CORE = { cx: ${CX}, cy: ${CY}, r: ${CORE_R} } as const;
-export const LOGO_STROKE = ${STROKE};
-export const LOGO_SPIRAL = "${spiral}";
-export const LOGO_TAIL = "${tail}";
+export const LOGO_VIEWBOX = "0 0 120 120";
+export const LOGO_THREAD_WIDTH = ${mark.tw};
+export const LOGO_NEEDLE = "${mark.needle}";
+export const LOGO_THREAD = "${mark.thread}";
+export const LOGO_STITCHES = "${mark.stitches}";
 `,
 );
 
-writeFileSync(join(ROOT, "public", "brand", "threadcore-mark.svg"), svgMark({ core: INK, thread: ACCENT }));
-writeFileSync(join(ROOT, "public", "brand", "threadcore-mark-light.svg"), svgMark({ core: "#ffffff", thread: ACCENT_ON_DARK }));
+const out = (name, m, colours) => writeFileSync(join(ROOT, "public", "brand", name), svgMark(m, colours));
+out("threadcore-mark.svg", mark, { needle: INK, thread: ACCENT });
+out("threadcore-mark-light.svg", mark, { needle: "#ffffff", thread: ACCENT_ON_DARK });
+out("threadcore-mark-black.svg", mark, { needle: "#000000", thread: "#000000" });
+out("threadcore-mark-white.svg", mark, { needle: "#ffffff", thread: "#ffffff" });
 
-// App icon: the mark on a dark rounded badge, scaled to sit inside it.
+// Favicon: chunkier needle and thread so it holds up at 16px.
 writeFileSync(
   join(ROOT, "app", "icon.svg"),
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <rect width="100" height="100" rx="22" fill="${INK}"/>
-  <g transform="translate(9 8) scale(.82)">
-    <g fill="none" stroke="${ACCENT_ON_DARK}" stroke-width="${STROKE + 1}" stroke-linecap="round" stroke-linejoin="round">
-      <path d="${spiral}"/>
-      <path d="${tail}"/>
+  <g transform="translate(10.4 11) scale(.66)">
+    <g fill="none" stroke="${ACCENT_ON_DARK}" stroke-width="${chunky.tw}" stroke-linecap="round">
+      <path d="${chunky.thread}"/>
+      <path d="${chunky.stitches}"/>
     </g>
-    <circle cx="${CX}" cy="${CY}" r="${CORE_R}" fill="#ffffff"/>
+    <path d="${chunky.needle}" fill="#ffffff" fill-rule="evenodd"/>
   </g>
 </svg>
 `,

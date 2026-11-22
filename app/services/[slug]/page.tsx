@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Download } from "lucide-react";
 import { ServiceGrid, serviceToCard } from "@/components/services/ServiceGrid";
 import { ButtonLink } from "@/components/shared/Button";
 import { Container } from "@/components/shared/Container";
@@ -109,6 +109,21 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
                 </li>
               ))}
             </ul>
+
+            {category?.resources?.map((r) => (
+              <a
+                key={r.href}
+                href={r.href}
+                download
+                className="mt-8 flex items-start gap-3 rounded-brand border border-line bg-surface p-4 transition-colors hover:border-ink"
+              >
+                <Download aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-accent" />
+                <span>
+                  <span className="block font-medium text-ink">{r.label}</span>
+                  <span className="mt-0.5 block text-sm text-muted">{r.description}</span>
+                </span>
+              </a>
+            ))}
 
             <p className="mt-8 text-sm text-muted">
               Pricing is by quotation, based on your quantity, design and finish.

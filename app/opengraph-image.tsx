@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/config";
-import { LOGO_CORE, LOGO_SPIRAL, LOGO_STROKE, LOGO_TAIL, LOGO_VIEWBOX } from "@/lib/logo-geometry";
+import { LOGO_NEEDLE, LOGO_STITCHES, LOGO_THREAD, LOGO_THREAD_WIDTH, LOGO_VIEWBOX } from "@/lib/logo-geometry";
 
 export const alt = `${siteConfig.name}: ${siteConfig.tagline}`;
 export const size = { width: 1200, height: 630 };
@@ -23,12 +23,12 @@ export default function OpengraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <svg width="84" height="84" viewBox={LOGO_VIEWBOX}>
-            <g fill="none" stroke="#ff6a47" strokeWidth={LOGO_STROKE} strokeLinecap="round" strokeLinejoin="round">
-              <path d={LOGO_SPIRAL} />
-              <path d={LOGO_TAIL} />
+          <svg width="92" height="92" viewBox={LOGO_VIEWBOX}>
+            <g fill="none" stroke="#ff6a47" strokeWidth={LOGO_THREAD_WIDTH} strokeLinecap="round">
+              <path d={LOGO_THREAD} />
+              <path d={LOGO_STITCHES} />
             </g>
-            <circle cx={LOGO_CORE.cx} cy={LOGO_CORE.cy} r={LOGO_CORE.r} fill="#ffffff" />
+            <path d={LOGO_NEEDLE} fill="#ffffff" fillRule="evenodd" />
           </svg>
           <div style={{ fontSize: 34, fontWeight: 600 }}>{siteConfig.name}</div>
         </div>

@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 
 /**
- * Threadcore Studios lockup: the thread-ball mark, the one-word "Threadcore"
+ * Threadcore Studios lockup: the needle-and-thread "T" mark, the one-word "Threadcore"
  * wordmark and a small "STUDIOS" descriptor. The text is taken from
  * siteConfig.name, so a rename in lib/config.ts flows through.
  */
@@ -24,7 +24,7 @@ export function Logo({
       aria-label={`${siteConfig.name}, home`}
       className={cn("inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap", className)}
     >
-      <LogoMark tone={tone} className="size-10 shrink-0" />
+      <LogoMark tone={tone} className="size-11 shrink-0" />
       <span className="flex flex-col leading-none">
         <span
           className={cn(

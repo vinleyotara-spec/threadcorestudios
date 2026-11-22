@@ -108,6 +108,14 @@ proportions at the top of that script and re-run it. The wordmark is live text i
 Ready-to-use files are in `public/brand/`: SVG marks (light and dark backgrounds), horizontal lockup PNGs
 (dark and light text, transparent) and a 512px profile picture for WhatsApp and social accounts.
 
+### Logo files and brand board
+`public/brand/` also holds `threadcore-brand-board.png` / `.pdf`: colours, typography, clear space, minimum sizes and the
+logo applied to cards, labels, caps, polos, totes, signage and app icons. Share it with anyone producing your branded items.
+
+### FAQ and downloads
+Edit the FAQ in `lib/faq.ts` (it also feeds Google's FAQ rich results). The uniform size sheet is
+`public/downloads/threadcore-uniform-size-sheet.csv`; link more helpers per category through `resources` in `lib/services.ts`.
+
 ### Client logos
 `lib/clients.ts` is empty on purpose: the "Brands we have worked with" strip only appears once you add brands
 you have genuinely worked for **and** have permission to show. Never add a brand's logo otherwise.

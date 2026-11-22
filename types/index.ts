@@ -22,6 +22,8 @@ export interface ServiceCategory {
   standalone?: boolean;
   /** Replaces the default "What to include in your request" list on service pages. */
   requestChecklist?: string[];
+  /** Downloadable helpers shown on this category's service pages. */
+  resources?: Array<{ label: string; description: string; href: string }>;
 }
 
 /** A single service / product line, e.g. "Business cards". */
