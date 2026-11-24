@@ -21,7 +21,7 @@ export function ClientMarquee({ children }: { children: ReactNode }) {
         onClick={() => setPaused((p) => !p)}
         aria-pressed={paused}
         aria-label={paused ? "Play the moving customer logos" : "Pause the moving customer logos"}
-        className="marquee-control absolute -top-10 right-5 inline-flex size-9 items-center justify-center rounded-full border border-line bg-surface text-ink transition-colors hover:border-ink sm:right-8"
+        className="marquee-control absolute -top-10 right-5 inline-flex size-9 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white transition-colors hover:border-white hover:bg-white/20 sm:right-8"
       >
         {paused ? <Play aria-hidden="true" className="size-4" /> : <Pause aria-hidden="true" className="size-4" />}
       </button>

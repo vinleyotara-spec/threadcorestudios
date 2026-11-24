@@ -4,19 +4,23 @@ import { ClientMarquee } from "@/components/home/ClientMarquee";
 import { clients, type Client } from "@/lib/clients";
 
 function ClientItem({ c }: { c: Client }) {
+  // Every customer sits on its own white card, so logos keep their true colours on a clean
+  // surface (brands usually require this) while the band behind can be any colour.
+  const card = "flex h-20 items-center justify-center rounded-2xl bg-white px-6 shadow-sm shadow-black/20 sm:h-24";
   const inner = c.logo ? (
-    // A fixed box so wide and tall logos sit evenly. Logos keep their own colours (never
-    // recoloured). `mix-blend-multiply` hides white backgrounds on JPG logos.
-    <span className="relative block h-12 w-32 sm:h-14 sm:w-40">
-      <Image src={c.logo} alt={c.name} fill sizes="160px" className="object-contain mix-blend-multiply" />
+    // A fixed box so wide and tall logos sit evenly. `mix-blend-multiply` hides white JPG backgrounds.
+    <span className={`${card} w-44 sm:w-52`}>
+      <span className="relative block h-12 w-32 sm:h-14 sm:w-40">
+        <Image src={c.logo} alt={c.name} fill sizes="160px" className="object-contain mix-blend-multiply" />
+      </span>
     </span>
   ) : (
-    <span className="font-display block whitespace-nowrap text-xl font-semibold tracking-tight text-ink/75 sm:text-2xl">
+    <span className={`${card} font-display whitespace-nowrap text-xl font-semibold tracking-tight text-ink sm:text-2xl`}>
       {c.name}
     </span>
   );
   return c.href ? (
-    <a href={c.href} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+    <a href={c.href} target="_blank" rel="noopener noreferrer" className="block rounded-2xl">
       {inner}
     </a>
   ) : (
@@ -46,9 +50,9 @@ export function ClientLogos() {
     ));
 
   return (
-    <section aria-labelledby="clients-heading" className="border-b border-line bg-surface/60 py-10 sm:py-12">
+    <section aria-labelledby="clients-heading" className="bg-ink py-12 sm:py-14">
       <Container>
-        <h2 id="clients-heading" className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+        <h2 id="clients-heading" className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
           Our customers
         </h2>
       </Container>
