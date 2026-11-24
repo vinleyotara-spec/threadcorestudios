@@ -16,6 +16,7 @@ const organizationJsonLd = {
   image: `${siteConfig.url}/brand/threadcore-profile.png`,
   description: siteConfig.description,
   foundingDate: siteConfig.established.iso,
+  sameAs: siteConfig.social.map((s) => s.href),
   telephone: siteConfig.contact.phone.replace(/\s/g, ""),
   address: {
     "@type": "PostalAddress",

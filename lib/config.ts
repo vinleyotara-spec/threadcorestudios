@@ -54,13 +54,13 @@ export const siteConfig = {
   },
 
   /**
-   * PLACEHOLDER social links. They currently point at the platform home pages;
-   * replace each href with the real profile URL, or delete an entry to hide it.
+   * Social profiles shown in the footer and on the contact page. Add an entry for each
+   * real account (platform is one of "instagram" | "facebook" | "tiktok"); delete an entry to hide it.
+   * Instagram and Facebook are not listed yet: add them when you have the profile links, e.g.
+   *   { platform: "instagram", label: "Instagram", href: "https://www.instagram.com/yourhandle" },
    */
   social: [
-    { platform: "instagram", label: "Instagram", href: "https://www.instagram.com/" },
-    { platform: "facebook", label: "Facebook", href: "https://www.facebook.com/" },
-    { platform: "tiktok", label: "TikTok", href: "https://www.tiktok.com/" },
+    { platform: "tiktok", label: "TikTok", href: "https://www.tiktok.com/@threadcorestudios" },
   ] satisfies SocialLink[],
 
   nav: [
