@@ -12,7 +12,7 @@ import {
   TextAreaField,
   TextField,
 } from "@/components/forms/fields";
-import { listServices, listServicesForCategory, serviceCategories } from "@/lib/services";
+import { listCategories, listServices, listServicesForCategory, serviceCategories } from "@/lib/services";
 import {
   ARTWORK_ACCEPT,
   ARTWORK_HELP,
@@ -376,7 +376,7 @@ function QuoteFormInner({
               setProduct("");
               clearError("product");
             }}
-            options={serviceCategories.map((c) => ({
+            options={listCategories().map((c) => ({
               value: c.slug,
               label: c.status === "coming_soon" ? `${c.name} (coming soon)` : c.name,
             }))}

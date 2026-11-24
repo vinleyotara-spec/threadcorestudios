@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Our Work",
   description:
-    "Browse printing, embroidery and apparel branding projects, and request something similar for your own brand.",
+    "Browse printing, branding, embroidery, uniform and workwear projects, and request something similar for your own brand.",
   path: "/portfolio",
 });
 

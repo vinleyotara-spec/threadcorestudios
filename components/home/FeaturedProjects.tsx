@@ -16,7 +16,7 @@ export async function FeaturedProjects() {
           <SectionHeading
             eyebrow="Featured projects"
             title="A look at the *work*"
-            description="A selection of the kind of printing, embroidery and branding we produce."
+            description="A selection of the kind of printing, branding, embroidery and uniforms we produce."
           />
           <ButtonLink href="/portfolio" variant="outline" className="self-start sm:self-auto">
             See all our work

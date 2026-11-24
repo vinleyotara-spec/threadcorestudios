@@ -9,11 +9,11 @@
 import { siteConfig } from "@/lib/config";
 
 export const hero = {
-  eyebrow: "Printing · Embroidery · Uniforms · Branding",
+  eyebrow: "Printing · Branding · Embroidery · Uniforms",
   headline: ["Bring Your", "Ideas", "to Life."],
   /** The word in `headline` to highlight in the accent colour. */
   highlight: "Ideas",
-  text: "Creative printing, embroidery and custom branding solutions that help individuals and businesses make their mark.",
+  text: "Creative printing, branding, embroidery and uniform solutions that help individuals and businesses make their mark.",
 };
 
 export const whyChooseUs = [
@@ -69,13 +69,13 @@ export const howItWorks = [
 
 export const about = {
   intro:
-    "Threadcore Studios is a creative printing, embroidery and branding studio. We help individuals and businesses turn ideas into printed and stitched products they are proud to put their name on.",
+    "Threadcore Studios is a creative printing, branding, embroidery and uniforms studio. We help individuals and businesses turn ideas into printed and stitched products they are proud to put their name on.",
   story: [
     `We have been operating since ${siteConfig.established.label}. We started with printing and embroidery and now also make branded and made-to-order uniforms and apparel, and supply promotional products, corporate gifts, packaging, labels and signage.`,
     "Every project starts with a conversation about what you want to achieve. From there we recommend the right materials and methods, and keep you informed until your order is in your hands.",
   ],
   mission:
-    "To make professional-quality printing, embroidery and branding accessible to individuals and businesses of every size.",
+    "To make professional-quality printing, branding, embroidery and uniforms accessible to individuals and businesses of every size.",
   vision:
     "To be the creative studio people think of first when they want to make their mark.",
   values: [

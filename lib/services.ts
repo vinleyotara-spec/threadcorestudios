@@ -43,22 +43,22 @@ export const serviceCategories: ServiceCategory[] = [
     imageLabel: "Embroidery",
     status: "active",
     featured: true,
-    display_order: 2,
+    display_order: 3,
   },
   {
     id: "apparel-branding",
-    name: "Apparel Branding",
+    name: "Branding",
     slug: "apparel-branding",
     description:
       "T-shirts, hoodies and custom apparel branded for teams, events and businesses.",
     image: img("category-apparel"),
     status: "active",
     featured: true,
-    display_order: 3,
+    display_order: 2,
   },
   {
     id: "apparel-manufacturing",
-    name: "Apparel Manufacturing",
+    name: "Uniforms",
     slug: "apparel-manufacturing",
     description:
       "Made-to-order uniforms and apparel for corporate, healthcare, security, safari and tour, sports, industrial and religious needs.",

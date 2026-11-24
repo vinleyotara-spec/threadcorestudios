@@ -1,6 +1,6 @@
 # Threadcore Studios website
 
-Marketing and enquiry website for a creative printing, embroidery and branding studio.
+Marketing and enquiry website for a creative printing, branding, embroidery and uniforms studio.
 Built with Next.js (App Router), TypeScript, Tailwind CSS, Lucide icons and Supabase.
 
 **MVP scope:** brand presentation, service discovery, portfolio, quote requests, WhatsApp contact.
@@ -88,6 +88,13 @@ scripts/generate-placeholders.mjs   Generates the temporary placeholder images
 public/images/placeholders/         Temporary illustrations (replace with real photos)
 ```
 
+## Service order
+
+The site presents the four pillars in this order everywhere (services page, homepage cards, footer, quote form, portfolio filters):
+**Printing, Branding, Embroidery, Uniforms**, followed by promotional products, corporate gifts and custom products. The order is
+each category's `display_order` in `lib/services.ts`; change the numbers to rearrange it. Display names ("Branding", "Uniforms") are
+the `name` fields; URLs keep their original slugs.
+
 ## How to change things
 
 ### Business name, contact details, social links
@@ -135,8 +142,8 @@ page, gets its own `/services/<slug>` page, joins the quote form's product list 
   services whose `category` is its slug. Categories marked `coming_soon` are grouped under
   "Future services"; set one to `active` and it gets its own section automatically.
 - `standalone: true` on a category gives it its own section on the Services page even while `coming_soon`
-  (used by Apparel Manufacturing). `requestChecklist` replaces the default "What to include in your request" list.
-- **Apparel Manufacturing** (corporate, healthcare, security, safari and tour, sports, industrial and religious uniforms) is live. It also has its own homepage section, `components/home/ApparelManufacturing.tsx`, built from the same data.
+  (used by Uniforms). `requestChecklist` replaces the default "What to include in your request" list.
+- **Uniforms** (corporate, healthcare, security, safari and tour, sports, industrial and religious uniforms) is live. It also has its own homepage section, `components/home/ApparelManufacturing.tsx`, built from the same data.
 - There are no prices anywhere: all pricing is by quotation.
 
 ### Portfolio

@@ -16,7 +16,7 @@ export const siteConfig = {
   name: "Threadcore Studios",
   tagline: "We Print Your Identity",
   description:
-    "Creative printing, embroidery and custom branding solutions that help individuals and businesses make their mark.",
+    "Creative printing, branding, embroidery and uniform solutions that help individuals and businesses make their mark.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://threadcorestudios.com",
   locale: "en",
 

@@ -12,8 +12,8 @@ import { cn } from "@/lib/utils";
 /** Hero imagery: swap these for real photography (see README, "Replacing placeholder images"). */
 const tiles = [
   { src: "/images/placeholders/portfolio-tees.svg", label: "Printing", className: "row-span-2" },
-  { src: "/images/placeholders/portfolio-caps.svg", label: "Embroidery", className: "" },
   { src: "/images/placeholders/portfolio-stationery.svg", label: "Branding", className: "" },
+  { src: "/images/placeholders/portfolio-caps.svg", label: "Embroidery", className: "" },
 ];
 
 export function Hero() {
@@ -85,7 +85,7 @@ export function Hero() {
       {/* Quiet ribbon under the hero */}
       <div className="border-y border-line bg-surface/60">
         <Container className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 py-4 text-sm text-muted">
-          <p>Printing · Embroidery · Uniforms · Apparel branding</p>
+          <p>Printing · Branding · Embroidery · Uniforms</p>
           <Link href="/portfolio" className="font-medium text-ink underline-offset-4 hover:text-accent hover:underline">
             See our work →
           </Link>

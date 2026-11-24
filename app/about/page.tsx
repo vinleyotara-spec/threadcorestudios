@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "About",
   description:
-    "Threadcore Studios is a creative printing, embroidery and branding studio helping individuals and businesses make their mark.",
+    "Threadcore Studios is a creative printing, branding, embroidery and uniforms studio helping individuals and businesses make their mark.",
   path: "/about",
 });
 

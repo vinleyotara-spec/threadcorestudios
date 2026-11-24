@@ -20,8 +20,8 @@ const illo = (name: string) => `/images/illustrations/${name}.jpg`;
 export const portfolioCategories: PortfolioCategory[] = [
   { id: "all", label: "All" },
   { id: "printing", label: "Printing" },
+  { id: "apparel-branding", label: "Branding" },
   { id: "embroidery", label: "Embroidery" },
-  { id: "apparel-branding", label: "Apparel Branding" },
   { id: "healthcare", label: "Scrubs & Healthcare" },
   { id: "workwear", label: "Workwear" },
   { id: "other", label: "Other" },
