@@ -19,7 +19,7 @@ export const faqs = [
   },
   {
     q: "Do you make uniforms?",
-    a: "Made-to-order uniforms for corporate, healthcare, security, safari and tour, sports, industrial and religious needs are coming soon. You can send an enquiry now and we will be in touch. We already embroider and print on uniforms you supply.",
+    a: "Yes. We make made-to-order uniforms for corporate, healthcare, security, safari and tour, sports, industrial and religious needs, and we can also embroider or print on uniforms you already have. Send us the details and we will quote.",
   },
   {
     q: "How do I order uniforms for a whole team?",

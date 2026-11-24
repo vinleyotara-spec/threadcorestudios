@@ -14,7 +14,7 @@ export async function ServicesOverview() {
           <SectionHeading
             eyebrow="What we do"
             title="Everything your brand needs, *made well*"
-            description="Start with printing and embroidery today. More ways to bring your brand to life are on the way."
+            description="From printing and embroidery to uniforms, gifts and packaging, everything that carries your brand, in one place."
           />
           <ButtonLink href="/services" variant="outline" className="self-start sm:self-auto">
             All services

@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Services",
   description:
-    "Printing, embroidery, apparel branding and made-to-order uniforms, with more services on the way. Request a quote for business cards, caps, T-shirts, corporate, healthcare, security and sports uniforms and more.",
+    "Printing, embroidery, apparel branding, made-to-order uniforms, promotional products, corporate gifts, packaging and signage. Request a quote for business cards, caps, T-shirts, corporate, healthcare, security and sports uniforms and more.",
   path: "/services",
 });
 
