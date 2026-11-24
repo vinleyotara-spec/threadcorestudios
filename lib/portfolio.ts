@@ -16,6 +16,8 @@ import type { PortfolioCategory, PortfolioProject } from "@/types";
 const img = (name: string) => `/images/placeholders/${name}.svg`;
 /** Illustration pictures (AI-generated, not photos of real jobs). Tagged isIllustration + isSample. */
 const illo = (name: string) => `/images/illustrations/${name}.jpg`;
+/** Photos of real jobs by the studio (public/images/work). No "Sample" or "Illustration" tag. */
+const work = (name: string) => `/images/work/${name}.jpg`;
 
 export const portfolioCategories: PortfolioCategory[] = [
   { id: "all", label: "All" },
@@ -28,6 +30,57 @@ export const portfolioCategories: PortfolioCategory[] = [
 ];
 
 export const portfolioProjects: PortfolioProject[] = [
+  // ---- Real work (photos of actual jobs) ----------------------------------
+  {
+    id: "work-cap",
+    title: "Embroidered trucker cap",
+    slug: "embroidered-trucker-cap",
+    description: "A red trucker cap with a raised white-thread name, fresh off the embroidery machine.",
+    category: "embroidery",
+    serviceSlug: "embroidered-caps",
+    image: work("embroidered-trucker-cap"),
+    featured: true,
+  },
+  {
+    id: "work-cap-production",
+    title: "Cap embroidery in production",
+    slug: "cap-embroidery-in-production",
+    description: "Multi-head embroidery machines stitching a logo onto a run of caps.",
+    category: "embroidery",
+    serviceSlug: "embroidered-caps",
+    image: work("cap-embroidery-production"),
+    featured: true,
+  },
+  {
+    id: "work-towels",
+    title: "Embroidered towels",
+    slug: "embroidered-towels",
+    description: "A set of white towels embroidered with a customer's logo.",
+    category: "embroidery",
+    serviceSlug: "custom-embroidered-apparel",
+    image: work("embroidered-towels"),
+    featured: true,
+  },
+  {
+    id: "work-towel-detail",
+    title: "Towel logo embroidery",
+    slug: "towel-logo-embroidery",
+    description: "Close-up of a logo embroidered in orange thread on a white towel.",
+    category: "embroidery",
+    serviceSlug: "custom-embroidered-apparel",
+    image: work("towel-logo-embroidery"),
+    featured: false,
+  },
+  {
+    id: "work-tumbler",
+    title: "Engraved tumbler",
+    slug: "engraved-tumbler",
+    description: "An insulated tumbler personalised with an engraved name.",
+    category: "other",
+    serviceSlug: "personalised-gifts",
+    image: work("engraved-tumbler"),
+    featured: false,
+  },
   {
     id: "prj-stationery",
     title: "Brand stationery set",

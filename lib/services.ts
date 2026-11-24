@@ -19,6 +19,8 @@ import type { AvailabilityStatus, Service, ServiceCategory } from "@/types";
 const img = (name: string) => `/images/placeholders/${name}.svg`;
 /** Illustration pictures (AI-generated, not photos of real jobs). Each use sets imageIsIllustration. */
 const illo = (name: string) => `/images/illustrations/${name}.jpg`;
+/** Photos of real jobs by the studio (public/images/work). */
+const work = (name: string) => `/images/work/${name}.jpg`;
 
 export const serviceCategories: ServiceCategory[] = [
   {
@@ -38,9 +40,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "embroidery",
     description:
       "Stitched logos and names on caps, polo shirts, uniforms and jackets.",
-    image: illo("embroidery-machine"),
-    imageIsIllustration: true,
-    imageLabel: "Embroidery",
+    image: work("cap-embroidery-production"),
     status: "active",
     featured: true,
     display_order: 3,
@@ -190,7 +190,7 @@ export const services: Service[] = [
     description:
       "Caps with your logo or name stitched in, for teams, businesses and events.",
     category: "embroidery",
-    image: img("embroidered-caps"),
+    image: work("embroidered-trucker-cap"),
     status: "active",
     featured: true,
     display_order: 1,
@@ -481,7 +481,7 @@ export const services: Service[] = [
     description:
       "Gifts made personal with names, designs and messages.",
     category: "custom-products",
-    image: img("personalised-gifts"),
+    image: work("engraved-tumbler"),
     status: "active",
     featured: false,
     display_order: 4,

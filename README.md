@@ -159,6 +159,11 @@ Edit [lib/portfolio.ts](lib/portfolio.ts). All current projects are **samples** 
 shown with a "Sample" tag). For each real job: add the photo, update the title, description and
 `image`, and delete `isSample`. Add a filter tab by adding to `portfolioCategories`.
 
+### Real work photos
+Photos of actual jobs live in `public/images/work/` and are listed first in the portfolio (`lib/portfolio.ts`, the "Real work"
+block). They carry no "Sample" or "Illustration" tag. Crop new photos to about 4:3 so they fill the cards, and only publish
+photos you took or have the right to use. Photos that show a client's logo are best shown with that client's OK.
+
 ### Illustrations vs real work
 Some images are **illustrations** (AI-generated pictures in `public/images/illustrations/`), not photos of real jobs. Set
 `imageIsIllustration: true` (services) or `isIllustration: true` (portfolio) and the site labels them "Illustration" and adds
