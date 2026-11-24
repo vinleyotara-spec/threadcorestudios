@@ -17,6 +17,8 @@ import type { AvailabilityStatus, Service, ServiceCategory } from "@/types";
  */
 
 const img = (name: string) => `/images/placeholders/${name}.svg`;
+/** Illustration pictures (AI-generated, not photos of real jobs). Each use sets imageIsIllustration. */
+const illo = (name: string) => `/images/illustrations/${name}.jpg`;
 
 export const serviceCategories: ServiceCategory[] = [
   {
@@ -36,7 +38,9 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "embroidery",
     description:
       "Stitched logos and names on caps, polo shirts, uniforms and jackets.",
-    image: img("category-embroidery"),
+    image: illo("embroidery-machine"),
+    imageIsIllustration: true,
+    imageLabel: "Embroidery",
     status: "active",
     featured: true,
     display_order: 2,
@@ -234,7 +238,9 @@ export const services: Service[] = [
     description:
       "Have something else in mind? Tell us the garment and the design and we will advise on the best approach.",
     category: "embroidery",
-    image: img("custom-embroidered-apparel"),
+    image: illo("hoodie-embroidery-detail"),
+    imageIsIllustration: true,
+    imageLabel: "Embroidery",
     status: "active",
     featured: false,
     display_order: 5,
@@ -260,7 +266,9 @@ export const services: Service[] = [
     description:
       "Branded hoodies for teams, clubs and businesses, finished with your design.",
     category: "apparel-branding",
-    image: img("hoodie-branding"),
+    image: illo("hoodie-flat"),
+    imageIsIllustration: true,
+    imageLabel: "Hoodie",
     status: "active",
     featured: false,
     display_order: 2,
@@ -298,7 +306,9 @@ export const services: Service[] = [
     description:
       "Scrubs, tunics and uniforms for clinics, hospitals and care teams, made for comfort through long shifts.",
     category: "apparel-manufacturing",
-    image: img("healthcare-uniforms"),
+    image: illo("scrubs-teal"),
+    imageIsIllustration: true,
+    imageLabel: "Scrubs",
     status: "active",
     featured: false,
     display_order: 2,
@@ -358,7 +368,9 @@ export const services: Service[] = [
     description:
       "Durable overalls, coveralls and work clothing for factories, workshops and site teams, with branding if you need it.",
     category: "apparel-manufacturing",
-    image: img("industrial-workwear"),
+    image: illo("coverall-navy"),
+    imageIsIllustration: true,
+    imageLabel: "Workwear",
     status: "active",
     featured: false,
     display_order: 7,

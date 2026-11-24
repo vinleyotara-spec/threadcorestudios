@@ -13,6 +13,8 @@ export function serviceToCard(service: Service): ServiceCardData {
     href: `/services/${service.slug}`,
     quoteHref: `/quote?service=${service.slug}`,
     whatsappHref: whatsappUrl(whatsappMessages.service(service.name)),
+    illustration: service.imageIsIllustration,
+    imageLabel: service.imageLabel,
   };
 }
 
@@ -27,6 +29,8 @@ export function categoryToCard(category: ServiceCategory): ServiceCardData {
     href: `/services#${category.slug}`,
     quoteHref: `/quote?category=${category.slug}`,
     whatsappHref: whatsappUrl(whatsappMessages.service(category.name)),
+    illustration: category.imageIsIllustration,
+    imageLabel: category.imageLabel,
   };
 }
 

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ButtonLink } from "@/components/shared/Button";
 import { Container } from "@/components/shared/Container";
+import { IllustrationChip } from "@/components/shared/IllustrationChip";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { WhatsAppLink } from "@/components/shared/WhatsAppLink";
 import { getCategoryBySlug, getServices } from "@/lib/services";
@@ -57,11 +58,7 @@ export async function ApparelManufacturing() {
                     sizes="(min-width: 1024px) 22vw, (min-width: 640px) 30vw, 45vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                   />
-                  {item.status === "coming_soon" && (
-                    <span className="absolute left-2.5 top-2.5 rounded-full bg-accent-soft px-2.5 py-1 text-xs font-medium text-accent-strong">
-                      Coming soon
-                    </span>
-                  )}
+                  {item.imageIsIllustration && <IllustrationChip label={item.imageLabel} className="bottom-2.5 left-2.5" />}
                 </div>
                 <h3 className="mt-3 flex items-center justify-between gap-2 font-display text-xl leading-tight tracking-tight text-white">
                   {item.name}

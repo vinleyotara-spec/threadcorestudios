@@ -7,6 +7,7 @@ import { ServiceGrid, serviceToCard } from "@/components/services/ServiceGrid";
 import { ButtonLink } from "@/components/shared/Button";
 import { Container } from "@/components/shared/Container";
 import { CTASection } from "@/components/shared/CTASection";
+import { IllustrationChip } from "@/components/shared/IllustrationChip";
 import { StatusBadge } from "@/components/shared/StatusBadge";
 import { WhatsAppLink } from "@/components/shared/WhatsAppLink";
 import { getCategoryBySlug, getRelatedServices, getServiceBySlug, listServices } from "@/lib/services";
@@ -75,15 +76,23 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
         </nav>
 
         <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="enter relative aspect-[4/3] overflow-hidden rounded-[22px] bg-sunken lg:aspect-square">
-            <Image
-              src={service.image}
-              alt={service.name}
-              fill
-              priority
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-            />
+          <div className="enter">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-sunken lg:aspect-square">
+              <Image
+                src={service.image}
+                alt={service.name}
+                fill
+                priority
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+              {service.imageIsIllustration && <IllustrationChip label={service.imageLabel} />}
+            </div>
+            {service.imageIsIllustration && (
+              <p className="mt-3 text-sm text-muted">
+                Illustrative image. Every order is made to your own specification: colours, sizes, fabric and branding.
+              </p>
+            )}
           </div>
 
           <div className="enter enter-1 lg:py-6">

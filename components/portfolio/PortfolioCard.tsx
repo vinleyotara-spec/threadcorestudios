@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { buttonStyles } from "@/components/shared/Button";
+import { IllustrationChip } from "@/components/shared/IllustrationChip";
 import type { PortfolioProject } from "@/types";
 import { whatsappMessages, whatsappUrl } from "@/lib/whatsapp";
 
@@ -20,7 +21,7 @@ export function PortfolioCard({
 
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-brand border border-line bg-surface transition-shadow duration-300 hover:shadow-xl hover:shadow-black/5">
-      <div className="relative aspect-[4/5] overflow-hidden bg-sunken">
+      <div className="relative aspect-[4/3] overflow-hidden bg-sunken">
         <Image
           src={project.image}
           alt={project.title}
@@ -34,6 +35,7 @@ export function PortfolioCard({
             Sample
           </span>
         )}
+        {project.isIllustration && <IllustrationChip label={project.imageLabel} />}
       </div>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">

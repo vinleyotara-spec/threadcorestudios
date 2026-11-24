@@ -144,6 +144,12 @@ Edit [lib/portfolio.ts](lib/portfolio.ts). All current projects are **samples** 
 shown with a "Sample" tag). For each real job: add the photo, update the title, description and
 `image`, and delete `isSample`. Add a filter tab by adding to `portfolioCategories`.
 
+### Illustrations vs real work
+Some images are **illustrations** (AI-generated pictures in `public/images/illustrations/`), not photos of real jobs. Set
+`imageIsIllustration: true` (services) or `isIllustration: true` (portfolio) and the site labels them "Illustration" and adds
+an honest caption. When you have real photos, replace the image path and delete the flag. Never present an illustration
+as a completed client job.
+
 ### Page copy
 Edit [lib/content.ts](lib/content.ts). The About page copy is placeholder text with no invented
 history, awards or statistics.

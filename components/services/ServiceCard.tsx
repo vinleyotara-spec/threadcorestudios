@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { buttonStyles } from "@/components/shared/Button";
+import { IllustrationChip } from "@/components/shared/IllustrationChip";
 import { StatusBadge } from "@/components/shared/StatusBadge";
 import type { AvailabilityStatus } from "@/types";
 
@@ -18,6 +19,10 @@ export interface ServiceCardData {
   quoteHref: string;
   /** Full WhatsApp link with the prefilled message. */
   whatsappHref: string;
+  /** The image is an illustration, not a photo of real work. */
+  illustration?: boolean;
+  /** What the illustration shows, e.g. "Scrubs". */
+  imageLabel?: string;
 }
 
 export function ServiceCard({
@@ -40,6 +45,7 @@ export function ServiceCard({
           className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         />
         <StatusBadge status={card.status} className="absolute left-3 top-3" />
+        {card.illustration && <IllustrationChip label={card.imageLabel} />}
       </div>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">

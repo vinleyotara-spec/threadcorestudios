@@ -20,6 +20,10 @@ export interface ServiceCategory {
    * (otherwise coming-soon categories are grouped under "Future services").
    */
   standalone?: boolean;
+  /** True when `image` is an illustration (e.g. AI-generated), not a photo of real work. Shows an "Illustration" label. */
+  imageIsIllustration?: boolean;
+  /** What the picture shows, e.g. "Scrubs" or "Embroidery". Shown on the image label. */
+  imageLabel?: string;
   /** Replaces the default "What to include in your request" list on service pages. */
   requestChecklist?: string[];
   /** Downloadable helpers shown on this category's service pages. */
@@ -35,6 +39,10 @@ export interface Service {
   /** Slug of a ServiceCategory. */
   category: string;
   image: string;
+  /** True when `image` is an illustration (e.g. AI-generated), not a photo of real work. Shows an "Illustration" label. */
+  imageIsIllustration?: boolean;
+  /** What the picture shows, e.g. "Scrubs" or "Embroidery". Shown on the image label. */
+  imageLabel?: string;
   status: AvailabilityStatus;
   featured: boolean;
   display_order: number;
@@ -59,6 +67,10 @@ export interface PortfolioProject {
   featured: boolean;
   /** Shows a "Sample" tag. Remove (or set false) once a real project replaces it. */
   isSample?: boolean;
+  /** True when `image` is an illustration (e.g. AI-generated), not a photo of real work. Shows an "Illustration" label. */
+  isIllustration?: boolean;
+  /** What the picture shows, e.g. "Scrubs" or "Embroidery". Shown on the image label. */
+  imageLabel?: string;
 }
 
 export interface NavItem {
