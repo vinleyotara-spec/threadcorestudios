@@ -20,7 +20,7 @@ export const hero = {
 export const valuePoints = [
   {
     title: "One studio for everything",
-    text: "Printing, branding, embroidery and uniforms under one roof, so you deal with one team and get one consistent look.",
+    text: "Printing, branding (from branded apparel to roll-up banners and billboards), embroidery and uniforms under one roof, so you deal with one team and get one consistent look.",
   },
   {
     title: "Made to your specification",
@@ -97,7 +97,7 @@ export const about = {
   intro:
     "Threadcore Studios is a creative printing, branding, embroidery and uniforms studio. We help individuals and businesses turn ideas into printed and stitched products they are proud to put their name on.",
   story: [
-    `We have been operating since ${siteConfig.established.label}. We started with printing and embroidery and now also make branded and made-to-order uniforms and apparel, and supply promotional products, corporate gifts, packaging, labels and signage.`,
+    `We have been operating since ${siteConfig.established.label}. We started with printing and embroidery and now also make branded and made-to-order uniforms and apparel, and supply marketing branding such as roll-up banners and billboards, promotional products, corporate gifts, packaging, labels and signage.`,
     "Every project starts with a conversation about what you want to achieve. From there we recommend the right materials and methods, and keep you informed until your order is in your hands.",
   ],
   mission:

@@ -232,6 +232,28 @@ export const portfolioProjects: PortfolioProject[] = [
     isSample: true,
     isIllustration: true,
   },
+  {
+    id: "prj-rollup",
+    title: "Roll-up banner",
+    slug: "roll-up-banner",
+    description: "A portable roll-up banner for an event or shop display.",
+    category: "apparel-branding",
+    serviceSlug: "roll-up-banners",
+    image: img("portfolio-rollup"),
+    featured: false,
+    isSample: true,
+  },
+  {
+    id: "prj-billboard",
+    title: "Billboard branding",
+    slug: "billboard-branding",
+    description: "A large-format billboard carrying a brand message.",
+    category: "apparel-branding",
+    serviceSlug: "billboards",
+    image: img("portfolio-billboard"),
+    featured: false,
+    isSample: true,
+  },
 ];
 
 // ---- Async data access (swap for Supabase queries when ready) ---------------

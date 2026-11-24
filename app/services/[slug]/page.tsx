@@ -31,7 +31,7 @@ export async function generateMetadata(props: PageProps<"/services/[slug]">): Pr
 
 const defaultChecklist = [
   "The quantity you need",
-  "Sizes, colours or garment details",
+  "Sizes, colours and finish",
   "Your logo or artwork, if you have it",
   "The date you need your order by",
 ];

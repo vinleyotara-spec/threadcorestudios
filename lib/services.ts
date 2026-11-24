@@ -50,7 +50,7 @@ export const serviceCategories: ServiceCategory[] = [
     name: "Branding",
     slug: "apparel-branding",
     description:
-      "T-shirts, hoodies and custom apparel branded for teams, events and businesses.",
+      "Apparel and marketing branding: branded T-shirts and hoodies, roll-up banners, billboards and more, for teams, events and businesses.",
     image: img("category-apparel"),
     status: "active",
     featured: true,
@@ -284,6 +284,43 @@ export const services: Service[] = [
     status: "active",
     featured: false,
     display_order: 3,
+  },
+
+  {
+    id: "svc-roll-up-banners",
+    name: "Roll-up Banners",
+    slug: "roll-up-banners",
+    description:
+      "Portable roll-up banners for events, exhibitions, shops and promotions, printed with your branding and message.",
+    category: "apparel-branding",
+    image: img("roll-up-banners"),
+    status: "active",
+    featured: false,
+    display_order: 4,
+  },
+  {
+    id: "svc-billboards",
+    name: "Billboards",
+    slug: "billboards",
+    description:
+      "Large-format billboard branding that puts your message in front of the public, produced to your size and artwork.",
+    category: "apparel-branding",
+    image: img("billboards"),
+    status: "active",
+    featured: false,
+    display_order: 5,
+  },
+  {
+    id: "svc-marketing-branding",
+    name: "Other Marketing Branding",
+    slug: "marketing-branding",
+    description:
+      "Other marketing branding for your business. Tell us what you have in mind and we will advise on the best way to make it.",
+    category: "apparel-branding",
+    image: img("marketing-branding"),
+    status: "active",
+    featured: false,
+    display_order: 6,
   },
 
   // ---- Apparel manufacturing ----------------------------------------------

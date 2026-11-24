@@ -347,6 +347,37 @@ function manufacturingSet(p) {
   );
 }
 
+
+// ---- marketing branding shapes ----------------------------------------------
+
+function rollup(p) {
+  return `
+<rect x="326" y="788" width="348" height="48" rx="14" fill="${p.detail}"/>
+<rect x="372" y="150" width="256" height="18" rx="9" fill="${p.detail}"/>
+<rect x="380" y="166" width="240" height="624" fill="${p.main}" stroke="${p.shade}" stroke-width="3"/>
+<rect x="380" y="166" width="240" height="178" fill="${p.accent}"/>
+${halftone(500, 255, 8, 5, 25, 10, p.main)}
+${bars(412, 380, [176, 124], p, { h: 18, gap: 16 })}
+${mark(500, 566, 46, p)}
+${bars(416, 650, [168, 136, 100], p, { h: 9, gap: 16, opacity: 0.5 })}
+<rect x="380" y="738" width="240" height="52" fill="${p.detail}" opacity=".9"/>`;
+}
+
+function billboard(p) {
+  return `
+<rect x="372" y="610" width="34" height="232" fill="${p.detail}" opacity=".85"/>
+<rect x="594" y="610" width="34" height="232" fill="${p.detail}" opacity=".85"/>
+<rect x="150" y="628" width="700" height="14" rx="4" fill="${p.detail}" opacity=".6"/>
+<rect x="160" y="262" width="680" height="360" rx="12" fill="${p.detail}"/>
+<rect x="184" y="286" width="632" height="312" rx="4" fill="${p.main}"/>
+<rect x="184" y="286" width="280" height="312" fill="${p.accent}"/>
+${halftone(324, 442, 10, 9, 26, 10, p.main)}
+${bars(504, 346, [264, 192], p, { h: 28, gap: 22 })}
+${mark(752, 528, 30, p)}
+${bars(504, 470, [248, 208, 164], p, { h: 10, gap: 18, opacity: 0.5 })}
+<rect x="300" y="236" width="44" height="12" rx="4" fill="${p.detail}"/><rect x="478" y="236" width="44" height="12" rx="4" fill="${p.detail}"/><rect x="656" y="236" width="44" height="12" rx="4" fill="${p.detail}"/>`;
+}
+
 // ---- manifest --------------------------------------------------------------
 
 const art = {
@@ -394,6 +425,13 @@ const art = {
   "sports-uniforms": () => wrap(palettes.clay, jersey(palettes.clay)),
   "religious-wear": () => wrap(palettes.stone, robe(palettes.stone)),
   "industrial-workwear": () => wrap(palettes.ink, coverall(palettes.ink)),
+
+  // marketing branding
+  "roll-up-banners": () => wrap(palettes.sand, rollup(palettes.sand)),
+  billboards: () => wrap(palettes.clay, billboard(palettes.clay)),
+  "marketing-branding": () => wrap(palettes.ink, rollup(palettes.ink)),
+  "portfolio-rollup": () => wrap(palettes.stone, rollup(palettes.stone)),
+  "portfolio-billboard": () => wrap(palettes.ink, billboard(palettes.ink)),
 
   // portfolio samples
   "portfolio-stationery": () => wrap(palettes.ink, cards(palettes.ink)),

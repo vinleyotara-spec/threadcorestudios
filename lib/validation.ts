@@ -26,6 +26,7 @@ export const CUSTOMISATION_METHODS = [
   "Heat transfer / vinyl",
   "Embroidery",
   "Sublimation",
+  "Large-format print",
   "Made to order (cut and sew)",
   "Not sure, please advise",
 ] as const;
