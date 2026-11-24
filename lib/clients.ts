@@ -19,6 +19,8 @@
  */
 export interface Client {
   name: string;
+  /** Text description of the logo for screen readers, when it differs from `name`. */
+  alt?: string;
   /** Optional logo. Leave out to show the name as text. */
   logo?: string;
   href?: string;
@@ -32,6 +34,6 @@ export const clients: Client[] = [
   { name: "Isuzu", logo: "/images/clients/isuzu.png" },
   { name: "Twende Trips" },
   { name: "V&C Works Limited" },
-  // The artwork reads "Hadiid Industries Ltd." Confirm it is the same company as this client.
-  { name: "Hadiid Fabricators", logo: "/images/clients/hadiid.png" },
+  // Confirmed by the owner: "Hadiid Industries Ltd." (the artwork) and "Hadiid Fabricators" are the same company.
+  { name: "Hadiid Fabricators", alt: "Hadiid Industries Ltd (Hadiid Fabricators)", logo: "/images/clients/hadiid.png" },
 ];

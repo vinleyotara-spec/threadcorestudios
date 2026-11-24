@@ -12,7 +12,7 @@ export function ClientItem({ c }: { c: Client }) {
     // A fixed box so wide and tall logos sit evenly. `mix-blend-multiply` hides white JPG backgrounds.
     <span className={`${card} w-44 sm:w-52`}>
       <span className="relative block h-12 w-32 sm:h-14 sm:w-40">
-        <Image src={c.logo} alt={c.name} fill sizes="160px" className="object-contain mix-blend-multiply" />
+        <Image src={c.logo} alt={c.alt ?? c.name} fill sizes="160px" className="object-contain mix-blend-multiply" />
       </span>
     </span>
   ) : (
