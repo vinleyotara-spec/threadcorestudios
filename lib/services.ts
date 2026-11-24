@@ -479,7 +479,7 @@ export const services: Service[] = [
     name: "Personalised Gifts",
     slug: "personalised-gifts",
     description:
-      "Gifts made personal with names, designs and messages.",
+      "Gifts made personal with names, designs and messages, including engraved cups such as Stanley cups.",
     category: "custom-products",
     image: work("engraved-tumbler"),
     status: "active",

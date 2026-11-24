@@ -73,9 +73,9 @@ export const portfolioProjects: PortfolioProject[] = [
   },
   {
     id: "work-tumbler",
-    title: "Engraved tumbler",
-    slug: "engraved-tumbler",
-    description: "An insulated tumbler personalised with an engraved name.",
+    title: "Engraved Stanley cup",
+    slug: "engraved-stanley-cup",
+    description: "A Stanley cup personalised with an engraved name.",
     category: "other",
     serviceSlug: "personalised-gifts",
     image: work("engraved-tumbler"),

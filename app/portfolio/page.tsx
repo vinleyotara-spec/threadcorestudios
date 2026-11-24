@@ -27,7 +27,7 @@ export default async function PortfolioPage() {
           <p className="mt-10 max-w-3xl text-sm leading-relaxed text-muted">
             Items tagged <strong className="font-medium text-ink">Sample</strong> or{" "}
             <strong className="font-medium text-ink">Illustration</strong> show the kind of work we do. They are not
-            specific client jobs, and every order is made to your own specification.
+            specific client jobs, and every order is made to your own specification. Brand names such as Stanley belong to their owners; Threadcore Studios engraves on their products and is not affiliated with them.
           </p>
         </Container>
       </section>
