@@ -65,12 +65,30 @@ export const siteConfig = {
 
   nav: [
     { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
+    { label: "Products & Services", href: "/services" },
+    {
+      // Dropdown: the sectors we make uniforms and workwear for (links to each service page).
+      label: "Industries",
+      href: "/services#apparel-manufacturing",
+      children: [
+        { label: "Corporate", href: "/services/corporate-uniforms" },
+        { label: "Healthcare", href: "/services/healthcare-uniforms" },
+        { label: "Security", href: "/services/security-uniforms" },
+        { label: "Safari & Tours", href: "/services/safari-tour-uniforms" },
+        { label: "Sports", href: "/services/sports-uniforms" },
+        { label: "Industrial", href: "/services/industrial-workwear" },
+        { label: "Religious", href: "/services/religious-wear" },
+      ],
+    },
     { label: "Our Work", href: "/portfolio" },
+    { label: "Customers", href: "/customers" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ] satisfies NavItem[],
 
+  /** The main button in the header and hero: jumps to the "Get started" form on the homepage. */
+  getStartedCta: { label: "Get Started", href: "/#get-started" },
+  /** The detailed quote form, used by service cards and call-to-action banners. */
   quoteCta: { label: "Request a Quote", href: "/quote" },
 } as const;
 

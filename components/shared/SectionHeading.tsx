@@ -11,6 +11,7 @@ export function SectionHeading({
   align = "left",
   tone = "dark",
   as: Tag = "h2",
+  headingId,
   className,
 }: {
   eyebrow?: string;
@@ -19,6 +20,8 @@ export function SectionHeading({
   align?: "left" | "center";
   tone?: "dark" | "light";
   as?: "h1" | "h2";
+  /** Optional id on the heading (for aria-labelledby on the section). */
+  headingId?: string;
   className?: string;
 }) {
   const parts = title.split(/(\*[^*]+\*)/g).filter(Boolean);
@@ -35,6 +38,7 @@ export function SectionHeading({
         </p>
       )}
       <Tag
+        id={headingId}
         className={cn(
           "font-display text-4xl leading-[1.08] tracking-tight sm:text-5xl",
           tone === "dark" ? "text-ink" : "text-white",

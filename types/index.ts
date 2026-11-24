@@ -76,6 +76,8 @@ export interface PortfolioProject {
 export interface NavItem {
   label: string;
   href: string;
+  /** Dropdown links (e.g. the Industries menu). */
+  children?: NavItem[];
 }
 
 export interface SocialLink {

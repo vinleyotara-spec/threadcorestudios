@@ -57,6 +57,11 @@ export async function Footer() {
               </li>
             ))}
             <li>
+              <Link href="/faq" className="transition-colors hover:text-white">
+                FAQ
+              </Link>
+            </li>
+            <li>
               <Link href={siteConfig.quoteCta.href} className="transition-colors hover:text-white">
                 {siteConfig.quoteCta.label}
               </Link>

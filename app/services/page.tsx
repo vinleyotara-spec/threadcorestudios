@@ -1,5 +1,6 @@
 import { ServiceAccordion, type AccordionSection } from "@/components/services/ServiceAccordion";
 import { serviceToCard } from "@/components/services/ServiceGrid";
+import { HowItWorks } from "@/components/home/HowItWorks";
 import { Container } from "@/components/shared/Container";
 import { CTASection } from "@/components/shared/CTASection";
 import { PageHeader } from "@/components/shared/PageHeader";
@@ -55,6 +56,7 @@ export default async function ServicesPage() {
           <ServiceAccordion sections={sections} />
         </Container>
       </section>
+      <HowItWorks />
       <CTASection
         title="Not sure what you *need*?"
         text="Describe your idea and we will recommend the best way to produce it."

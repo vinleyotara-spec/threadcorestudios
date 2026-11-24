@@ -16,31 +16,57 @@ export const hero = {
   text: "Creative printing, branding, embroidery and uniform solutions that help individuals and businesses make their mark.",
 };
 
-export const whyChooseUs = [
+/** "The Value of Our Solutions" feature list on the homepage. Edit to match how the studio really works. */
+export const valuePoints = [
   {
-    icon: "gem",
-    title: "Quality workmanship",
-    text: "Careful production and finishing on everything we make.",
+    title: "One studio for everything",
+    text: "Printing, branding, embroidery and uniforms under one roof, so you deal with one team and get one consistent look.",
   },
   {
-    icon: "focus",
-    title: "Attention to detail",
-    text: "From colour and placement to stitching and trim, the small things matter.",
+    title: "Made to your specification",
+    text: "Colours, sizes, fabrics and branding are set around your brief, not limited to a catalogue.",
   },
   {
-    icon: "palette",
-    title: "Custom solutions",
-    text: "Tell us what you have in mind and we will recommend the best way to produce it.",
+    title: "Quotation-based pricing",
+    text: "Every job is quoted on its quantity, design and finish. You do not need an account to ask.",
   },
   {
-    icon: "messages",
-    title: "Reliable communication",
-    text: "Clear updates from your first message to the day you receive your order.",
+    title: "Easy to request",
+    text: "Send the quote form or message us on WhatsApp, with a sketch, a logo or just an idea.",
   },
   {
-    icon: "users",
+    title: "Team and uniform ordering",
+    text: "A size sheet lets you list each person's garment and size, so team orders are quick to quote.",
+  },
+  {
+    title: "Clear communication",
+    text: "Updates at each stage, from your first message to the day you receive your order.",
+  },
+  {
     title: "For individuals and businesses",
     text: "One-off pieces for personal projects, and consistent branding for teams and companies.",
+  },
+] as const;
+
+/** "Our Solutions": three ways to order. */
+export const solutions = [
+  {
+    title: "Quick Quote",
+    text: "Printing, branding and embroidery for individuals and businesses. Tell us what you need and we will send a quotation.",
+    href: "/quote",
+    image: "/images/placeholders/category-printing.svg",
+  },
+  {
+    title: "Team & Uniform Orders",
+    text: "Made-to-order uniforms for corporate, healthcare, security, safari and tour, sports, industrial and religious teams, with a size sheet to keep big orders simple.",
+    href: "/services#apparel-manufacturing",
+    image: "/images/placeholders/category-manufacturing.svg",
+  },
+  {
+    title: "Custom Projects",
+    text: "Promotional products, corporate gifts, packaging, labels and signage, made around your idea.",
+    href: "/services#custom-products",
+    image: "/images/placeholders/category-custom.svg",
   },
 ] as const;
 

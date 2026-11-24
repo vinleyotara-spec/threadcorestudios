@@ -1,12 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ButtonLink } from "@/components/shared/Button";
 import { Container } from "@/components/shared/Container";
-import { WhatsAppLink } from "@/components/shared/WhatsAppLink";
 import { hero } from "@/lib/content";
-import { siteConfig } from "@/lib/config";
-import { whatsappMessages } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
 
 /** Hero imagery: swap these for real photography (see README, "Replacing placeholder images"). */
@@ -40,19 +36,11 @@ export function Hero() {
             {hero.text}
           </p>
 
-          <div className="enter enter-3 mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-            <ButtonLink href={siteConfig.quoteCta.href} size="lg">
-              {siteConfig.quoteCta.label}
+          <div className="enter enter-3 mt-9">
+            <ButtonLink href="#get-started" size="lg">
+              Get started
               <ArrowRight aria-hidden="true" className="size-4" />
             </ButtonLink>
-            <ButtonLink href="/services" variant="outline" size="lg">
-              Explore Our Services
-            </ButtonLink>
-          </div>
-          <div className="enter enter-4 mt-5">
-            <WhatsAppLink message={whatsappMessages.general()} variant="ghost" className="-ml-1 px-1">
-              Prefer to chat? Message us on WhatsApp
-            </WhatsAppLink>
           </div>
         </div>
 
@@ -82,15 +70,6 @@ export function Hero() {
         </div>
       </Container>
 
-      {/* Quiet ribbon under the hero */}
-      <div className="border-y border-line bg-surface/60">
-        <Container className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 py-4 text-sm text-muted">
-          <p>Printing · Branding · Embroidery · Uniforms</p>
-          <Link href="/portfolio" className="font-medium text-ink underline-offset-4 hover:text-accent hover:underline">
-            See our work →
-          </Link>
-        </Container>
-      </div>
     </section>
   );
 }

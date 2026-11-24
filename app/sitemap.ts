@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/config";
 import { listServices } from "@/lib/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["", "/services", "/portfolio", "/about", "/contact", "/quote"];
+  const pages = ["", "/services", "/portfolio", "/customers", "/about", "/contact", "/quote", "/faq"];
   const base = siteConfig.url.replace(/\/$/, "");
 
   return [

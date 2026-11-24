@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/shared/Container";
 import { ClientMarquee } from "@/components/home/ClientMarquee";
 import { clients, type Client } from "@/lib/clients";
 
-function ClientItem({ c }: { c: Client }) {
+export function ClientItem({ c }: { c: Client }) {
   // Every customer sits on its own white card, so logos keep their true colours on a clean
   // surface (brands usually require this) while the band behind can be any colour.
   const card = "flex h-20 items-center justify-center rounded-2xl bg-white px-6 shadow-sm shadow-black/20 sm:h-24";
@@ -70,6 +71,11 @@ export function ClientLogos() {
           {set(true, "h")}
         </ul>
       </ClientMarquee>
+      <p className="mt-8 text-center">
+        <Link href="/customers" className="text-sm font-medium text-white underline underline-offset-4 hover:text-orange">
+          Learn more about our customers
+        </Link>
+      </p>
     </section>
   );
 }

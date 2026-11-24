@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { CircleAlert, CircleCheck, LoaderCircle } from "lucide-react";
 import { buttonStyles } from "@/components/shared/Button";
 import { WhatsAppLink } from "@/components/shared/WhatsAppLink";
-import { Honeypot, TextAreaField, TextField } from "@/components/forms/fields";
+import { Honeypot, SelectField, TextAreaField, TextField } from "@/components/forms/fields";
 import { validateContact } from "@/lib/validation";
 import { whatsappMessages } from "@/lib/whatsapp";
 import type { ApiResponse } from "@/types";
@@ -17,7 +17,11 @@ type Status =
 
 const FIELD_ORDER = ["fullName", "email", "phone", "message"];
 
-export function ContactForm() {
+/**
+ * Short contact form. Pass `interests` (e.g. the four service pillars) to add a "What do you need?"
+ * choice, which is prefixed to the message so the studio sees it in the notification.
+ */
+export function ContactForm({ interests }: { interests?: string[] } = {}) {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<Status>({ kind: "idle" });
   const formRef = useRef<HTMLFormElement>(null);
@@ -50,9 +54,10 @@ export function ContactForm() {
     for (const [key, value] of fd.entries()) {
       if (typeof value === "string") raw[key] = value;
     }
+    const message = raw.interest ? `Interested in: ${raw.interest}\n\n${raw.message}` : raw.message;
     const fallbackMessage = [
       whatsappMessages.general(),
-      raw.message,
+      message,
       raw.fullName ? `Name: ${raw.fullName}` : "",
     ]
       .filter(Boolean)
@@ -72,7 +77,7 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...raw, startedAt: startedAt.current }),
+        body: JSON.stringify({ ...raw, message, startedAt: startedAt.current }),
       });
       const data = (await res.json()) as ApiResponse;
 
@@ -157,6 +162,15 @@ export function ContactForm() {
           error={errors.phone}
         />
       </div>
+      {interests && (
+        <SelectField
+          id="interest"
+          label="What do you need?"
+          optional
+          placeholder="Choose one…"
+          options={interests.map((i) => ({ value: i, label: i }))}
+        />
+      )}
       <TextAreaField
         id="message"
         label="Message"

@@ -67,8 +67,8 @@ app/
   layout.tsx, globals.css   Shell, fonts, colour tokens
   sitemap.ts, robots.ts, opengraph-image.tsx, icon.svg, not-found.tsx, error.tsx, loading.tsx
 components/
-  layout/    Navbar, Footer
-  home/      Hero, ServicesOverview, WhyChooseUs, FeaturedProjects, HowItWorks
+  layout/    Navbar (with Industries dropdown), Footer
+  home/      Hero, ValueSection, SolutionsSection, ClientLogos (billboard), Testimonials, GetStarted, YouMightAlsoLike, HowItWorks, FAQ
   services/  ServiceCard, ServiceGrid, ServiceAccordion
   portfolio/ PortfolioCard, PortfolioGallery
   forms/     QuoteForm, ContactForm, fields
@@ -87,6 +87,14 @@ supabase/schema.sql
 scripts/generate-placeholders.mjs   Generates the temporary placeholder images
 public/images/placeholders/         Temporary illustrations (replace with real photos)
 ```
+
+## Homepage format
+
+The homepage follows a fixed structure (see `app/page.tsx`): Hero with a single "Get started" button, **The value of our
+solutions**, **Our solutions** (three cards), **Our customers** (scrolling logos + testimonials), **Get started today!**
+(form, phone, WhatsApp) and **You might also like** (three tiles), then the footer. The header's "Get Started" button
+jumps to the form (`/#get-started`). Copy for these sections is in `lib/content.ts`; testimonials live in `lib/testimonials.ts`
+(hidden until you add real ones). Extra pages: `/customers` and `/faq`.
 
 ## Service order
 
