@@ -54,7 +54,7 @@ export const solutions = [
     title: "Quick Quote",
     text: "Printing, branding and embroidery for individuals and businesses. Tell us what you need and we will send a quotation.",
     href: "/quote",
-    image: "/images/placeholders/category-printing.svg",
+    image: "/images/work/corporate-notebooks-pens.jpg",
   },
   {
     title: "Team & Uniform Orders",
@@ -66,7 +66,7 @@ export const solutions = [
     title: "Custom Projects",
     text: "Promotional products, corporate gifts, packaging, labels and signage, made around your idea.",
     href: "/services#custom-products",
-    image: "/images/placeholders/category-custom.svg",
+    image: "/images/work/corporate-gift-box.jpg",
   },
 ] as const;
 

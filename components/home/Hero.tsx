@@ -5,11 +5,11 @@ import { Container } from "@/components/shared/Container";
 import { hero } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
-/** Hero imagery: swap these for real photography (see README, "Replacing placeholder images"). */
+/** Hero imagery: photos of real work. The first tile is cropped tall (1:2), the others square. */
 const tiles = [
-  { src: "/images/placeholders/portfolio-tees.svg", label: "Printing", className: "row-span-2" },
-  { src: "/images/placeholders/portfolio-stationery.svg", label: "Branding", className: "" },
-  { src: "/images/placeholders/portfolio-caps.svg", label: "Embroidery", className: "" },
+  { src: "/images/work/hero-printing.jpg", label: "Printing", className: "row-span-2" },
+  { src: "/images/work/hero-branding.jpg", label: "Branding", className: "" },
+  { src: "/images/work/hero-embroidery.jpg", label: "Embroidery", className: "" },
 ];
 
 export function Hero() {

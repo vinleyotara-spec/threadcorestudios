@@ -51,7 +51,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "apparel-branding",
     description:
       "Apparel and marketing branding: branded T-shirts and hoodies, roll-up banners, billboards and more, for teams, events and businesses.",
-    image: img("category-apparel"),
+    image: work("africa-print-hoodies"),
     status: "active",
     featured: true,
     display_order: 2,
@@ -90,7 +90,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "promotional-products",
     description:
       "Branded merchandise that keeps your name in front of customers.",
-    image: img("category-promotional"),
+    image: work("logo-bottles-white"),
     status: "active",
     featured: true,
     display_order: 5,
@@ -101,7 +101,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "corporate-gifts",
     description:
       "Thoughtful, branded gifts for clients, staff and special occasions.",
-    image: img("category-gifts"),
+    image: work("named-corporate-bottles"),
     status: "active",
     featured: true,
     display_order: 6,
@@ -112,7 +112,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "custom-products",
     description:
       "Packaging, labels, signage and personalised products made around your idea.",
-    image: img("category-custom"),
+    image: work("mandala-notebook"),
     status: "active",
     featured: true,
     display_order: 7,
@@ -190,7 +190,7 @@ export const services: Service[] = [
     description:
       "Caps with your logo or name stitched in, for teams, businesses and events.",
     category: "embroidery",
-    image: work("embroidered-trucker-cap"),
+    image: work("cap-embroidery-production"),
     status: "active",
     featured: true,
     display_order: 1,
@@ -238,9 +238,7 @@ export const services: Service[] = [
     description:
       "Have something else in mind? Tell us the garment and the design and we will advise on the best approach.",
     category: "embroidery",
-    image: illo("hoodie-embroidery-detail"),
-    imageIsIllustration: true,
-    imageLabel: "Embroidery",
+    image: work("gift-shuka-blanket"),
     status: "active",
     featured: false,
     display_order: 5,
@@ -421,7 +419,7 @@ export const services: Service[] = [
     description:
       "Branded merchandise for promotions and giveaways.",
     category: "promotional-products",
-    image: img("promotional-merchandise"),
+    image: work("branded-flask-navy"),
     status: "active",
     featured: false,
     display_order: 1,
@@ -433,7 +431,7 @@ export const services: Service[] = [
     description:
       "Branded gifts for clients and staff.",
     category: "corporate-gifts",
-    image: img("corporate-gifts"),
+    image: work("branded-notebooks"),
     status: "active",
     featured: false,
     display_order: 1,
@@ -481,7 +479,7 @@ export const services: Service[] = [
     description:
       "Gifts made personal with names, designs and messages, including engraved cups such as Stanley cups.",
     category: "custom-products",
-    image: work("engraved-tumbler"),
+    image: work("name-bottles-navy"),
     status: "active",
     featured: false,
     display_order: 4,

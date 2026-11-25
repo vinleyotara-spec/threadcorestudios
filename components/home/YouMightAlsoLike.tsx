@@ -4,7 +4,7 @@ import { Container } from "@/components/shared/Container";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 
 const tiles: Array<{ icon: LucideIcon; title: string; text: string; href: string }> = [
-  { icon: Images, title: "Our Work", text: "Browse printing, branding, embroidery and uniform projects.", href: "/portfolio" },
+  { icon: Images, title: "Our Work", text: "Browse photos of branded and embroidered work.", href: "/portfolio" },
   { icon: LayoutGrid, title: "Products & Services", text: "See everything we make, by category.", href: "/services" },
   { icon: FileText, title: "Request a Quote", text: "Send the details of your order and get a quotation.", href: "/quote" },
 ];

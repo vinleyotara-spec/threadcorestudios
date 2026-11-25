@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Our Work",
   description:
-    "Browse printing, branding, embroidery, uniform and workwear projects, and request something similar for your own brand.",
+    "Browse branded drinkware, embroidery, apparel, notebooks and blankets we have made, and request something similar for your own brand.",
   path: "/portfolio",
 });
 
@@ -25,9 +25,8 @@ export default async function PortfolioPage() {
         <Container>
           <PortfolioGallery projects={projects} categories={categories} />
           <p className="mt-10 max-w-3xl text-sm leading-relaxed text-muted">
-            Items tagged <strong className="font-medium text-ink">Sample</strong> or{" "}
-            <strong className="font-medium text-ink">Illustration</strong> show the kind of work we do. They are not
-            specific client jobs, and every order is made to your own specification. Brand names such as Stanley belong to their owners; Threadcore Studios engraves on their products and is not affiliated with them.
+            Every order is made to your own specification. Logos shown on products, and brand names such as Stanley,
+            belong to their owners; Threadcore Studios is not affiliated with product manufacturers.
           </p>
         </Container>
       </section>

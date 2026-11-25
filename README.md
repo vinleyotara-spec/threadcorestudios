@@ -155,14 +155,13 @@ page, gets its own `/services/<slug>` page, joins the quote form's product list 
 - There are no prices anywhere: all pricing is by quotation.
 
 ### Portfolio
-Edit [lib/portfolio.ts](lib/portfolio.ts). All current projects are **samples** (`isSample: true`,
-shown with a "Sample" tag). For each real job: add the photo, update the title, description and
-`image`, and delete `isSample`. Add a filter tab by adding to `portfolioCategories`.
+Edit [lib/portfolio.ts](lib/portfolio.ts). Every project is a photo of a real job. Add a filter tab by adding to
+`portfolioCategories`; tabs with no projects are hidden.
 
 ### Real work photos
-Photos of actual jobs live in `public/images/work/` and are listed first in the portfolio (`lib/portfolio.ts`, the "Real work"
-block). They carry no "Sample" or "Illustration" tag. Crop new photos to about 4:3 so they fill the cards, and only publish
-photos you took or have the right to use. Photos that show a client's logo are best shown with that client's OK.
+Photos of actual jobs live in `public/images/work/`. Crop new photos to about 4:3 so they fill the cards, use each
+photo in one place only, and only publish photos you took or have the right to use. Photos that show a client's logo
+are best shown with that client's OK.
 
 ### Illustrations vs real work
 Some images are **illustrations** (AI-generated pictures in `public/images/illustrations/`), not photos of real jobs. Set
@@ -220,6 +219,6 @@ The architecture leaves room for these later phases (none are built yet):
 - [ ] Add Instagram and Facebook links in `lib/config.ts` (hidden until then), and replace the placeholder email.
 - [ ] Run `supabase/schema.sql` and set the Supabase variables (forms don't save until you do).
 - [ ] Optional: set the Resend variables for email alerts.
-- [ ] Replace placeholder images and sample portfolio projects with real photography.
+- [ ] Replace the remaining placeholder service images with real photography.
 - [ ] Replace the temporary wordmark with the real logo; review the About copy.
 - [ ] Point `threadcorestudios.com` DNS at Vercel.
